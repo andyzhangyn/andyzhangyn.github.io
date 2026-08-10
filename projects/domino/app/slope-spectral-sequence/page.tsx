@@ -1155,6 +1155,7 @@ function DominoLattice({
   const rows = Array.from({ length: latticeSize }, (_, index) => dimension - index);
   const columns = Array.from({ length: latticeSize }, (_, index) => index);
   const [hoveredDiagonal, setHoveredDiagonal] = useState<number | null>(null);
+  const [selectedDiagonal, setSelectedDiagonal] = useState<number | null>(null);
   const [hoveredCombinedTerm, setHoveredCombinedTerm] = useState<{
     i: number;
     j: number;
@@ -1177,7 +1178,9 @@ function DominoLattice({
   const activeDominoDiagonal = hoveredDiagonal !== null
       && diagonalHasDomino(hoveredDiagonal)
     ? hoveredDiagonal
-    : null;
+    : selectedDiagonal !== null && diagonalHasDomino(selectedDiagonal)
+      ? selectedDiagonal
+      : null;
   const differentials = possibleDifferentials(dimension, values);
   const differentialHoverEnabled =
     showDominoPart && view !== "slopes" && showDifferentials;
@@ -1249,6 +1252,8 @@ function DominoLattice({
     gridTemplateRows: `repeat(${latticeSize}, var(--spectral-step)) 28px`,
   } satisfies CSSProperties;
   const trackDiagonal = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (event.pointerType === "touch") return;
+
     if (!showDominoPart || view === "slopes" || dimension < 2) {
       setHoveredDiagonal(null);
       return;
@@ -1289,6 +1294,7 @@ function DominoLattice({
               : "slope zero, positive slope, and domino parts"
         }`}
         onPointerMove={trackDiagonal}
+        onClick={() => setSelectedDiagonal(null)}
         onMouseLeave={() => {
           setHoveredDiagonal(null);
           setHoveredCombinedTerm(null);
@@ -1549,6 +1555,14 @@ function DominoLattice({
         const isArtinDominoSource = hasArtinDominoHighlight
           && i === 0
           && j === 2;
+        const canSelectDomino = showDominoPart
+          && view !== "slopes"
+          && dominoRank > 0;
+        const toggleSelectedDomino = () => {
+          if (!canSelectDomino) return;
+          const diagonal = i + j;
+          setSelectedDiagonal((current) => current === diagonal ? null : diagonal);
+        };
 
         return (
           <span
@@ -1580,6 +1594,25 @@ function DominoLattice({
                 : hasSlopes
                   ? () => setHoveredSlopeTerms([])
                   : undefined}
+              onClick={canSelectDomino
+                ? (event) => {
+                  event.stopPropagation();
+                  toggleSelectedDomino();
+                }
+                : undefined}
+              onKeyDown={canSelectDomino
+                ? (event) => {
+                  if (event.key !== "Enter" && event.key !== " ") return;
+                  event.preventDefault();
+                  event.stopPropagation();
+                  toggleSelectedDomino();
+                }
+                : undefined}
+              role={canSelectDomino ? "button" : undefined}
+              tabIndex={canSelectDomino ? 0 : undefined}
+              aria-pressed={canSelectDomino
+                ? activeDominoDiagonal === i + j
+                : undefined}
               key={`${i}-${j}-${isArtinDominoSource ? artinHighlightSequence : "idle"}`}
             >
             {isNonzero ? (

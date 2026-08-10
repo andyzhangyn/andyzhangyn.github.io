@@ -2913,6 +2913,17 @@ html.is-embedded .page-shell {
   place-items: center;
 }
 
+.spectral-node[role="button"] {
+  border-radius: 6px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.spectral-node[role="button"]:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--spectral-accent-deep) 70%, transparent);
+  outline-offset: -4px;
+}
+
 .spectral-point {
   position: relative;
   z-index: 2;
@@ -3570,6 +3581,61 @@ html.is-embedded .page-shell {
   .ring-definition {
     padding: 11px 13px;
     font-size: 0.82rem;
+  }
+
+  .viewer-scroll {
+    overflow-x: hidden;
+  }
+
+  .viewer {
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lattice-plot {
+    --step: clamp(40px, 12vw, 46px);
+    --plot-top: 78px;
+  }
+
+  .source-plot {
+    border-right: 0;
+  }
+
+  .target-plot {
+    border-left: 0;
+  }
+
+  .mapping {
+    min-height: 90px;
+    border-top: 1px solid rgba(195, 196, 188, 0.52);
+    border-bottom: 1px solid rgba(195, 196, 188, 0.52);
+    padding: 10px 0;
+  }
+
+  .mapping-label {
+    margin-bottom: 8px;
+  }
+
+  .mapping-arrow {
+    width: 11px;
+    height: 42px;
+  }
+
+  .mapping-arrow::before {
+    top: 0;
+    right: auto;
+    bottom: 4px;
+    left: 5px;
+    width: 1px;
+    height: auto;
+  }
+
+  .mapping-arrow::after {
+    top: auto;
+    right: auto;
+    bottom: 1px;
+    left: 1px;
+    transform: rotate(135deg);
   }
 
   .truncation-controls {
