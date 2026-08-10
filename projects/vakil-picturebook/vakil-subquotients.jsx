@@ -2183,8 +2183,8 @@ export default function App() {
       }
       .vakil-dag-edges-desktop { display:none; }
       @media (max-width: 600px) {
-        .vakil-mode-column .vakil-svg-math-html { display:none; }
-        .vakil-mode-column .vakil-svg-math-native { display:inline; }
+        .vakil-svg-math-html { display:none; }
+        .vakil-svg-math-native { display:inline; }
         .vakil-caption {
           width:calc(100% - 16px) !important;
           padding-right:12px;
@@ -3294,7 +3294,7 @@ export default function App() {
   );
 
   return (
-    <div className={`vakil-mode-page${isCol ? " vakil-mode-column" : ""}`} style={container}>
+    <div className="vakil-mode-page" style={container}>
       {css}
       {langBtns}
 

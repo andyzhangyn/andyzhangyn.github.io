@@ -17,7 +17,7 @@ export const profile = {
     url: "https://antieau.github.io/",
   },
   portrait: {
-    src: "/profile-photo-2.jpg",
+    src: "/profile-photo.jpg",
     width: 1050,
     height: 1470,
     alt: "Yuanning Zhang browsing a shop display while holding a coffee",
