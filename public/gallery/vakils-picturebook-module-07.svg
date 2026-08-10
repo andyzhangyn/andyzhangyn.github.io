@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="title description">
+  <title id="title">Vakil's Picturebook module 07</title>
+  <desc id="description">The original Snake lemma module icon.</desc>
+  <g opacity="0.34">
+    <path d="M 5 5 H 18 V 18 H 5 Z" fill="#B23A2A" />
+    <path d="M 18 5 H 43 V 18 H 18 Z" fill="#2E5E8C" />
+    <path d="M 5 18 H 18 V 30 H 5 Z" fill="#A8752C" />
+    <path d="M 18 18 H 31 V 30 H 18 Z" fill="#6B5B8E" />
+    <path d="M 31 18 H 43 V 30 H 31 Z" fill="#4A6B4F" />
+    <path d="M 5 30 H 31 V 43 H 5 Z" fill="#A8752C" />
+    <path d="M 31 30 H 43 V 43 H 31 Z" fill="#3E7C7B" />
+  </g>
+  <g fill="none" stroke="#2A2620" stroke-width="1.15" stroke-opacity="0.62" stroke-linejoin="round">
+    <path d="M 5 5 H 43 V 43 H 5 Z" />
+    <path d="M 18 5 V 30" />
+    <path d="M 31 18 V 43" />
+    <path d="M 5 18 H 43" />
+    <path d="M 5 30 H 43" />
+  </g>
+</svg>

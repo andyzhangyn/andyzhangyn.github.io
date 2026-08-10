@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="title description">
+  <title id="title">Vakil's Picturebook module 07 square jigsaw</title>
+  <desc id="description">Seven cleanly colored interlocking pieces from the Snake lemma module, arranged as a square with thin unified seams.</desc>
+
+  <!-- The three rows have been spaced into a square without stretching the
+       teeth. Each tooth remains part of its tile's single fill path. -->
+  <g fill-opacity=".46">
+    <path fill="#B23A2A" d="M 20 20 H 113 V 54.5 C 113 60.5 124 57.5 124 66.5 C 124 75.5 113 72.5 113 78.5 V 113 H 70 C 64 113 67 124 58 124 C 49 124 52 113 46 113 H 20 Z" />
+    <path fill="#2E5E8C" d="M 113 20 H 300 V 113 H 257 C 251 113 254 124 245 124 C 236 124 239 113 233 113 H 207 H 163 C 157 113 160 124 151 124 C 142 124 145 113 139 113 H 113 V 78.5 C 113 72.5 124 75.5 124 66.5 C 124 57.5 113 60.5 113 54.5 Z" />
+    <path fill="#6B5B8E" d="M 113 113 H 139 C 145 113 142 124 151 124 C 160 124 157 113 163 113 H 207 V 148 C 207 154 218 151 218 160 C 218 169 207 166 207 172 V 207 H 163 C 157 207 160 218 151 218 C 142 218 145 207 139 207 H 113 V 172 C 113 166 124 169 124 160 C 124 151 113 154 113 148 Z" />
+    <path fill="#A8752C" d="M 20 207 H 46 C 52 207 49 218 58 218 C 67 218 64 207 70 207 H 113 H 139 C 145 207 142 218 151 218 C 160 218 157 207 163 207 H 207 V 242 C 207 248 218 245 218 254 C 218 263 207 260 207 266 V 300 H 20 Z" />
+    <path fill="#3E7C7B" d="M 207 207 H 233 C 239 207 236 218 245 218 C 254 218 251 207 257 207 H 300 V 300 H 207 V 266 C 207 260 218 263 218 254 C 218 245 207 248 207 242 Z" />
+    <path fill="#A8752C" d="M 20 113 H 46 C 52 113 49 124 58 124 C 67 124 64 113 70 113 H 113 V 148 C 113 154 124 151 124 160 C 124 169 113 166 113 172 V 207 H 70 C 64 207 67 218 58 218 C 49 218 52 207 46 207 H 20 Z" />
+    <path fill="#4A6B4F" d="M 207 113 H 233 C 239 113 236 124 245 124 C 254 124 251 113 257 113 H 300 V 207 H 257 C 251 207 254 218 245 218 C 236 218 239 207 233 207 H 207 V 172 C 207 166 218 169 218 160 C 218 151 207 154 207 148 Z" />
+  </g>
+
+  <!-- Draw the shared seam system once so every edge stays equally thin. -->
+  <g fill="none" stroke="#2A2620" stroke-width="1.35" stroke-opacity=".72" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke">
+    <path d="M 20 20 H 300 V 300 H 20 Z" />
+    <path d="M 113 20 V 54.5 C 113 60.5 124 57.5 124 66.5 C 124 75.5 113 72.5 113 78.5 V 113 V 148 C 113 154 124 151 124 160 C 124 169 113 166 113 172 V 207" />
+    <path d="M 207 113 V 148 C 207 154 218 151 218 160 C 218 169 207 166 207 172 V 207 V 242 C 207 248 218 245 218 254 C 218 263 207 260 207 266 V 300" />
+    <path d="M 20 113 H 46 C 52 113 49 124 58 124 C 67 124 64 113 70 113 H 113 H 139 C 145 113 142 124 151 124 C 160 124 157 113 163 113 H 207 H 233 C 239 113 236 124 245 124 C 254 124 251 113 257 113 H 300" />
+    <path d="M 20 207 H 46 C 52 207 49 218 58 218 C 67 218 64 207 70 207 H 113 H 139 C 145 207 142 218 151 218 C 160 218 157 207 163 207 H 207 H 233 C 239 207 236 218 245 218 C 254 218 251 207 257 207 H 300" />
+  </g>
+</svg>

@@ -76,8 +76,8 @@ export default function VisualizationsPage() {
                   <div className="gallery-artwork">
                     <Image
                       className="gallery-artwork-image"
-                      src="/gallery/vakils-picturebook-module-07-art.svg"
-                      alt="Module 07 Snake lemma jigsaw with thin seams and clean color fields"
+                      src="/gallery/vakils-picturebook-spectral-n.svg"
+                      alt="An N-shaped spectral-sequence jigsaw in red, blue, charcoal, and magenta"
                       width={320}
                       height={320}
                       sizes="(max-width: 680px) calc(100vw - 70px), 400px"
@@ -113,10 +113,6 @@ export default function VisualizationsPage() {
                     <p>In preparation</p>
                   </div>
                 </div>
-              </div>
-              <div className="gallery-plaque gallery-plaque-static">
-                <span aria-hidden="true">03</span>
-                <h2>Zeta Function</h2>
               </div>
             </article>
 

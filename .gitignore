@@ -1,0 +1,51 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+/public/visualizations/domino/
+/public/visualizations/projects/vakil-picturebook/
+/public/visualizations/projects/domino-cyclic-matrix/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+next-env.d.ts
+/dist/
+/outputs/
+/work/
+
+# Local-only working material (never publish)
+/tmp/
+/*.[Hh][Ee][Ii][Cc]
+/*.[Jj][Pp][Gg]
+/*.[Jj][Pp][Ee][Gg]
+/public/*.[Jj][Pp][Gg]
+/public/*.[Jj][Pp][Ee][Gg]

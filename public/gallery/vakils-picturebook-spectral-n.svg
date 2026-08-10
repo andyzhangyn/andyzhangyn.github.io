@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 230" role="img" aria-labelledby="title description">
+  <title id="title">Vakil's Picturebook spectral-sequence jigsaw</title>
+  <desc id="description">A single N-shaped assembly of interlocking red, blue, and charcoal strips.</desc>
+
+  <defs>
+    <!-- Every interior seam is defined once, so a tooth never sits on top of a straight edge. -->
+    <path id="rise-seam-left" d="M 18.5 175.5 L 75.136 118.864 C 77.964 116.036 82.207 121.692 86.45 117.45 C 90.692 113.207 85.036 108.964 87.864 106.136 L 161.5 32.5" />
+    <path id="rise-seam-middle" d="M 52.5 175.5 L 100.636 127.364 C 103.464 124.536 107.707 130.192 111.95 125.95 C 116.192 121.707 110.536 117.464 113.364 114.636 L 195.5 32.5" />
+    <path id="rise-seam-right" d="M 86.5 175.5 L 126.136 135.864 C 128.964 133.036 133.207 138.692 137.45 134.45 C 141.692 130.207 136.036 125.964 138.864 123.136 L 229.5 32.5" />
+
+    <path id="fall-seam-left" d="M 127.5 32.5 L 209.636 114.636 C 212.464 117.464 216.707 111.808 220.95 116.05 C 225.192 120.293 219.536 124.536 222.364 127.364 L 270.5 175.5" />
+    <path id="fall-seam-middle" d="M 161.5 32.5 L 226.636 97.636 C 229.464 100.464 233.707 94.808 237.95 99.05 C 242.192 103.293 236.536 107.536 239.364 110.364 L 304.5 175.5" />
+    <path id="fall-seam-right" d="M 195.5 32.5 L 243.636 80.636 C 246.464 83.464 250.707 77.808 254.95 82.05 C 259.192 86.293 253.536 90.536 256.364 93.364 L 338.5 175.5" />
+
+    <path id="return-seam-left" d="M 236.5 175.5 L 318.636 93.364 C 321.464 90.536 325.707 96.192 329.95 91.95 C 334.192 87.707 328.536 83.464 331.364 80.636 L 379.5 32.5" />
+    <path id="return-seam-middle" d="M 270.5 175.5 L 344.136 101.864 C 346.964 99.036 351.207 104.692 355.45 100.45 C 359.692 96.207 354.036 91.964 356.864 89.136 L 413.5 32.5" />
+    <path id="return-seam-right" d="M 304.5 175.5 L 369.636 110.364 C 372.464 107.536 376.707 113.192 380.95 108.95 C 385.192 104.707 379.536 100.464 382.364 97.636 L 447.5 32.5" />
+
+    <!-- One reusable jigsaw joint at each lane of the two turns. -->
+    <path id="joint-top" d="M 110.5 49.5 L 114.41 53.41 C 116.45 55.45 119.829 51.051 122.889 54.111 C 125.949 57.171 121.55 60.55 123.59 62.59 L 127.5 66.5 L 131.41 62.59 C 133.45 60.55 136.829 64.949 139.889 61.889 C 142.949 58.829 138.55 55.45 140.59 53.41 L 144.5 49.5 L 127.5 32.5 L 110.5 49.5 Z" />
+    <path id="joint-bottom" d="M 219.5 158.5 L 236.5 175.5 L 253.5 158.5 L 249.59 154.59 C 247.55 152.55 251.949 149.171 248.889 146.111 C 245.829 143.051 242.45 147.45 240.41 145.41 L 236.5 141.5 L 232.59 145.41 C 230.55 147.45 234.949 150.829 231.889 153.889 C 228.829 156.949 225.45 152.55 223.41 154.59 L 219.5 158.5 Z" />
+    <path id="joint-top-baseline" d="M 110.5 49.5 L 127.5 66.5 L 144.5 49.5" />
+    <path id="joint-bottom-baseline" d="M 219.5 158.5 L 236.5 141.5 L 253.5 158.5" />
+  </defs>
+
+  <g transform="translate(17 10)" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#B23A2A" stroke-opacity=".94">
+      <path d="M 1.5 158.5 L 127.5 32.5 M 120.5 175.5 L 246.5 49.5" />
+      <use href="#rise-seam-left" />
+      <use href="#rise-seam-middle" />
+      <use href="#rise-seam-right" />
+      <path d="M 1.5 158.5 L 18.5 175.5 M 35.5 158.5 L 52.5 175.5 M 69.5 158.5 L 86.5 175.5 M 103.5 158.5 L 120.5 175.5 M 127.5 32.5 L 144.5 49.5 M 161.5 32.5 L 178.5 49.5 M 195.5 32.5 L 212.5 49.5 M 229.5 32.5 L 246.5 49.5" />
+    </g>
+
+    <g stroke="#2E5E8C" stroke-opacity=".94">
+      <path d="M 110.5 49.5 L 236.5 175.5 M 229.5 32.5 L 355.5 158.5" />
+      <use href="#fall-seam-left" />
+      <use href="#fall-seam-middle" />
+      <use href="#fall-seam-right" />
+      <path d="M 110.5 49.5 L 127.5 32.5 M 144.5 49.5 L 161.5 32.5 M 178.5 49.5 L 195.5 32.5 M 212.5 49.5 L 229.5 32.5 M 236.5 175.5 L 253.5 158.5 M 270.5 175.5 L 287.5 158.5 M 304.5 175.5 L 321.5 158.5 M 338.5 175.5 L 355.5 158.5" />
+    </g>
+
+    <g stroke="#2A2620" stroke-opacity=".94">
+      <path d="M 219.5 158.5 L 345.5 32.5 M 338.5 175.5 L 464.5 49.5" />
+      <use href="#return-seam-left" />
+      <use href="#return-seam-middle" />
+      <use href="#return-seam-right" />
+      <path d="M 219.5 158.5 L 236.5 175.5 M 253.5 158.5 L 270.5 175.5 M 287.5 158.5 L 304.5 175.5 M 321.5 158.5 L 338.5 175.5 M 345.5 32.5 L 362.5 49.5 M 379.5 32.5 L 396.5 49.5 M 413.5 32.5 L 430.5 49.5 M 447.5 32.5 L 464.5 49.5" />
+    </g>
+
+    <!-- Remove the straight seams beneath the concave/convex ends before drawing the joints. -->
+    <g stroke="#FAF8F3" stroke-width="4" stroke-linecap="butt">
+      <use href="#joint-top-baseline" />
+      <use href="#joint-top-baseline" transform="translate(34)" />
+      <use href="#joint-top-baseline" transform="translate(68)" />
+      <use href="#joint-top-baseline" transform="translate(102)" />
+      <use href="#joint-bottom-baseline" />
+      <use href="#joint-bottom-baseline" transform="translate(34)" />
+      <use href="#joint-bottom-baseline" transform="translate(68)" />
+      <use href="#joint-bottom-baseline" transform="translate(102)" />
+    </g>
+
+    <g fill="#FAF8F3" stroke="#B85A79" stroke-opacity=".94">
+      <use href="#joint-top" />
+      <use href="#joint-top" transform="translate(34)" />
+      <use href="#joint-top" transform="translate(68)" />
+      <use href="#joint-top" transform="translate(102)" />
+      <use href="#joint-bottom" />
+      <use href="#joint-bottom" transform="translate(34)" />
+      <use href="#joint-bottom" transform="translate(68)" />
+      <use href="#joint-bottom" transform="translate(102)" />
+    </g>
+  </g>
+</svg>

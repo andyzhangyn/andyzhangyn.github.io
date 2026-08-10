@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ui-min-g" content="2">
+    <meta name="ui-max-g" content="30">
+    <meta
+      name="description"
+      content="Interactive weighted-forest visualization for supersingular cyclic Frobenius words."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Domino Forest">
+    <meta
+      property="og:description"
+      content="Turn a cyclic Frobenius word into its weighted forest and numerical invariants."
+    >
+    <meta property="og:image" content="./og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Domino Forest">
+    <meta
+      name="twitter:description"
+      content="Turn a cyclic Frobenius word into its weighted forest and numerical invariants."
+    >
+    <meta name="twitter:image" content="./og.png">
+    <title>domino forest</title>
+    <link rel="icon" href="./favicon.svg">
+    <link rel="stylesheet" href="./katex.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./katex.min.js" defer></script>
+    <script src="./forest_renderer.js" defer></script>
+    <script src="./cyclic-domino.js" defer></script>
+    <script src="./app.js" defer></script>
+    <script src="./embedded-resize.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero">
+        <div class="brand-lockup">
+          <h1 data-i18n-html="brand.title">domino <span>forest</span></h1>
+        </div>
+        <div class="header-actions">
+          <div
+            class="language-switch"
+            role="group"
+            aria-label="Language"
+            data-i18n-aria="language.label"
+          >
+            <button type="button" data-language="zh" aria-pressed="false">中</button>
+            <span aria-hidden="true">/</span>
+            <button type="button" data-language="en" aria-pressed="true">En</button>
+          </div>
+          <button
+            id="about-open"
+            class="about-button"
+            type="button"
+            aria-label="About this tool"
+            data-i18n-aria="about.open"
+            aria-haspopup="dialog"
+            aria-controls="about-dialog"
+          >
+            <span aria-hidden="true">?</span>
+          </button>
+        </div>
+      </header>
+
+      <section
+        class="input-panel"
+        aria-label="cyclic word controls"
+        data-i18n-aria="word.controls"
+      >
+        <form id="word-form" class="word-form" novalidate>
+          <div class="module-head">
+            <span data-i18n="word.label">word</span>
+            <span
+              class="module-spec"
+              data-tex="2g,\quad \sum_i\varepsilon_i=g,\quad 2\le g\le 30"
+            >2g, Σᵢεᵢ=g, 2≤g≤30</span>
+          </div>
+          <label class="sr-only" for="word-input" data-i18n="word.inputLabel">
+            Cyclic binary word
+          </label>
+          <div class="input-row">
+            <input
+              id="word-input"
+              name="word"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              spellcheck="false"
+              value="000111"
+              aria-describedby="validation-message"
+            >
+            <button id="analyze-button" type="submit">
+              <span data-i18n="action.build">build</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+          <div id="validation-message" class="validation-message" role="status">
+            <span data-i18n="status.ready">ready</span>
+          </div>
+        </form>
+
+        <div
+          class="random-panel"
+          aria-label="Random cyclic word"
+          data-i18n-aria="random.label"
+        >
+          <div class="random-example">
+            <div class="random-conditions">
+              <label for="random-g" data-tex="g">g</label>
+              <input id="random-g" type="number" min="2" max="30" value="8">
+              <label for="random-a" data-tex="a">a</label>
+              <input
+                id="random-a"
+                type="number"
+                min="1"
+                max="8"
+                placeholder="random"
+                data-i18n-placeholder="random.placeholder"
+                aria-describedby="random-a-hint"
+              >
+            </div>
+            <span id="random-a-hint" class="sr-only">
+              <span data-i18n="random.hint">
+                Enter an integer from 1 to g, or leave blank to choose a randomly.
+              </span>
+            </span>
+            <button id="random-button" type="button" data-i18n="action.random">
+              random
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="result-section" class="result-section" aria-live="polite">
+        <div class="result-heading">
+          <h2 data-i18n="forest.heading">forest</h2>
+          <div id="word-summary" class="word-summary"></div>
+        </div>
+
+        <div id="forest-toolbar" class="forest-toolbar" hidden>
+          <div
+            class="toolbar-group"
+            aria-label="Forest component layout"
+            data-i18n-aria="forest.layout"
+          >
+            <div class="segmented-control">
+              <button
+                class="active"
+                type="button"
+                data-layout="scatter"
+                aria-pressed="true"
+              >
+                <span data-i18n="layout.scatter">scatter</span>
+              </button>
+              <button
+                type="button"
+                data-layout="grid"
+                aria-pressed="false"
+              >
+                <span data-i18n="layout.read">list</span>
+              </button>
+            </div>
+            <button
+              id="flip-button"
+              class="quiet-button"
+              type="button"
+              aria-label="Flip vertical forest orientation"
+              data-i18n-aria="forest.flip"
+              aria-pressed="false"
+            >
+              root ↑
+            </button>
+            <button
+              id="shuffle-button"
+              class="quiet-button icon-button"
+              type="button"
+              aria-label="Shuffle component layout"
+              data-i18n-aria="forest.shuffle"
+            >
+              <svg class="control-icon" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M16.8 6.8V3.2h-3.6"></path>
+                <path d="M3.2 13.2v3.6h3.6"></path>
+                <path d="M15.7 6.1A7 7 0 0 0 4.6 5l-1.4 1.8"></path>
+                <path d="M4.3 13.9A7 7 0 0 0 15.4 15l1.4-1.8"></path>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="toolbar-group zoom-controls"
+            aria-label="Forest zoom controls"
+            data-i18n-aria="forest.zoomControls"
+          >
+            <label class="toolbar-label" for="zoom-range" data-i18n="forest.scale">
+              scale
+            </label>
+            <input
+              id="zoom-range"
+              class="zoom-range"
+              type="range"
+              min="0"
+              max="100"
+              step="0.1"
+              value="0"
+            >
+            <output id="zoom-label" for="zoom-range">100%</output>
+            <button
+              id="zoom-fit"
+              class="quiet-button icon-button"
+              type="button"
+              aria-label="Fit forest to boundary"
+              data-i18n-aria="forest.fit"
+            >
+              <svg class="control-icon" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M7 3H3v4"></path>
+                <path d="M13 3h4v4"></path>
+                <path d="M7 17H3v-4"></path>
+                <path d="M13 17h4v-4"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="forest-frame" class="forest-frame">
+          <div id="forest-empty" class="forest-empty">
+            <div class="empty-mark" aria-hidden="true">⌁</div>
+            <p data-i18n="forest.awaiting">awaiting word</p>
+          </div>
+          <div id="forest-viewport" class="forest-viewport" hidden>
+            <div id="forest-sizer" class="forest-sizer">
+              <div id="forest-stage" class="forest-stage layout-scatter"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="invariants" class="invariant-grid" hidden>
+          <article class="invariant-card sequence-card wide">
+            <header>
+              <div>
+                <div class="sr-only" data-i18n="invariant.typeSequence">type sequence</div>
+                <div class="invariant-symbol" data-tex="J">J</div>
+              </div>
+              <button
+                type="button"
+                class="copy-button icon-button"
+                data-copy-target="value-j"
+                aria-label="Copy type sequence"
+                data-i18n-aria="copy.typeSequence"
+              >
+                <svg class="control-icon copy-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="8" y="8" width="11" height="11" rx="2"></rect>
+                  <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path>
+                </svg>
+                <svg class="control-icon copied-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m5 12 4 4 10-10"></path>
+                </svg>
+              </button>
+            </header>
+            <div id="count-j" class="sequence-count"></div>
+            <div id="value-j" class="invariant-value sequence-value"></div>
+          </article>
+          <article class="invariant-card sequence-card lambda-card wide">
+            <header>
+              <div>
+                <div class="sr-only" data-i18n="invariant.isogenyPartition">
+                  isogeny partition
+                </div>
+                <div class="invariant-symbol" data-tex="\lambda">λ</div>
+              </div>
+              <button
+                type="button"
+                class="copy-button icon-button"
+                data-copy-target="value-lambda"
+                aria-label="Copy isogeny partition"
+                data-i18n-aria="copy.isogenyPartition"
+              >
+                <svg class="control-icon copy-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="8" y="8" width="11" height="11" rx="2"></rect>
+                  <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path>
+                </svg>
+                <svg class="control-icon copied-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m5 12 4 4 10-10"></path>
+                </svg>
+              </button>
+            </header>
+            <div id="count-lambda" class="sequence-count"></div>
+            <div id="value-lambda" class="invariant-value sequence-value"></div>
+            <div id="young-diagram-panel" class="young-diagram" hidden>
+              <div class="young-diagram-heading">
+                <span data-i18n="young.title">Young diagram</span>
+                <span id="young-diagram-meta" class="sr-only"></span>
+              </div>
+              <button
+                id="young-diagram-open"
+                class="young-diagram-open"
+                type="button"
+                aria-label="Open enlarged Young diagram"
+                data-i18n-aria="young.open"
+                aria-haspopup="dialog"
+                aria-controls="young-diagram-dialog"
+              >
+                <canvas
+                  id="young-diagram-canvas"
+                  width="640"
+                  height="160"
+                  aria-hidden="true"
+                ></canvas>
+              </button>
+            </div>
+          </article>
+          <article
+            class="invariant-card"
+            aria-label="degree-two Artin invariant"
+            data-i18n-aria="invariant.sigma"
+          >
+            <div
+              class="invariant-symbol"
+              data-tex="\sigma_{\mathrm{Art}}"
+            >σArt</div>
+            <div id="value-sigma" class="invariant-value number"></div>
+          </article>
+          <article
+            class="invariant-card"
+            aria-label="domino p-exponent"
+            data-i18n-aria="invariant.pexp"
+          >
+            <div class="invariant-symbol" data-tex="e=p\text{-exp}">e = p-exp</div>
+            <div id="value-pexp" class="invariant-value number"></div>
+          </article>
+          <article
+            class="invariant-card a-number-card"
+            aria-label="a-number"
+            data-i18n-aria="invariant.anumber"
+          >
+            <div class="invariant-symbol" data-tex="a">a</div>
+            <div id="value-anumber" class="invariant-value number"></div>
+            <div id="value-anumber-range" class="invariant-card-bound"></div>
+          </article>
+
+          <article id="paper-bounds" class="bounds-card">
+            <header class="bounds-heading">
+              <h3 data-i18n="bounds.heading">bounds</h3>
+              <div id="bounds-parameters" class="bounds-parameters"></div>
+            </header>
+
+            <div class="bounds-list">
+              <section id="bound-sigma-row" class="bound-row">
+                <div class="bound-row-heading">
+                  <span
+                    class="bound-symbol"
+                    data-tex="\sigma_{\mathrm{Art}}"
+                  >σArt</span>
+                </div>
+                <div
+                  id="bound-sigma-plot"
+                  class="bound-plot"
+                  role="img"
+                  aria-label="Degree-two Artin invariant interval"
+                  data-i18n-aria="bounds.sigmaInterval"
+                >
+                  <div id="bound-sigma-track" class="bound-track">
+                    <span class="bound-admissible" aria-hidden="true"></span>
+                    <span class="bound-end bound-end-lower" aria-hidden="true"></span>
+                    <span class="bound-end bound-end-upper" aria-hidden="true"></span>
+                    <span id="bound-sigma-marker" class="bound-marker" aria-hidden="true">
+                      <span id="bound-sigma-marker-label" class="bound-marker-label"></span>
+                    </span>
+                  </div>
+                  <div class="bound-end-labels" aria-hidden="true">
+                    <span id="bound-sigma-lower"></span>
+                    <span id="bound-sigma-upper"></span>
+                  </div>
+                </div>
+              </section>
+
+              <section id="bound-pexp-row" class="bound-row">
+                <div class="bound-row-heading">
+                  <span class="bound-symbol" data-tex="e=p\text{-exp}">
+                    e = p-exp
+                  </span>
+                </div>
+                <div
+                  id="bound-pexp-plot"
+                  class="bound-plot"
+                  role="img"
+                  aria-label="Domino p-exponent interval"
+                  data-i18n-aria="bounds.pexpInterval"
+                >
+                  <div id="bound-pexp-track" class="bound-track">
+                    <span class="bound-admissible" aria-hidden="true"></span>
+                    <span class="bound-end bound-end-lower" aria-hidden="true"></span>
+                    <span class="bound-end bound-end-upper" aria-hidden="true"></span>
+                    <span id="bound-pexp-marker" class="bound-marker" aria-hidden="true">
+                      <span id="bound-pexp-marker-label" class="bound-marker-label"></span>
+                    </span>
+                  </div>
+                  <div class="bound-end-labels" aria-hidden="true">
+                    <span id="bound-pexp-lower"></span>
+                    <span id="bound-pexp-upper"></span>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <div id="bounds-observation" class="bounds-observation" hidden></div>
+            <details class="bounds-info">
+              <summary data-i18n="bounds.info">info</summary>
+              <div class="bounds-info-content">
+                <div id="bound-sigma-formula" class="info-formula"></div>
+                <div id="bound-pexp-formula" class="info-formula"></div>
+                <div id="bound-sigma-envelope" class="bound-envelope"></div>
+                <p data-i18n-html="bounds.assumption">
+                  geometric realization is assumed; the upper
+                  <span class="math-inline" data-tex="\sigma_{\mathrm{Art}}">
+                    σArt
+                  </span>
+                  endpoint also assumes a principal polarization.
+                </p>
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <dialog
+      id="about-dialog"
+      class="about-dialog"
+      aria-labelledby="about-dialog-title"
+    >
+      <div class="about-dialog-heading">
+        <h2 id="about-dialog-title" data-i18n="about.title">about domino forest</h2>
+        <button
+          id="about-close"
+          class="icon-button"
+          type="button"
+          aria-label="Close about dialog"
+          data-i18n-aria="about.close"
+        >
+          <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12"></path>
+            <path d="M18 6 6 18"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="about-content">
+        <div
+          class="about-flow"
+          aria-label="Computation overview"
+          data-i18n-html="about.flow"
+          data-i18n-aria="about.flowLabel"
+        >
+          <span
+            class="math-flow"
+            data-tex="\boldsymbol{\varepsilon}\longrightarrow \bigwedge^2 H^1_{\mathrm{crys}}\longrightarrow \{\mathbf h^{(s)}\}\longrightarrow \mathcal F_U\longrightarrow (J,\lambda,e,\sigma_{\mathrm{Art}})"
+          >
+            ε → Λ²H¹crys → heights → forest → invariants
+          </span>
+        </div>
+        <section>
+          <h3 data-i18n="about.inputHeading">input</h3>
+          <p data-i18n-html="about.inputBody">
+            A balanced binary cyclic word with
+            <span class="math-inline" data-tex="g">g</span> zeros and
+            <span class="math-inline" data-tex="g">g</span> ones. It records
+            the <span class="math-inline" data-tex="p">p</span>-adic Frobenius
+            valuations of a cyclic basis for a supersingular
+            <span class="math-inline" data-tex="F">F</span>-crystal. Words are
+            normalized up to cyclic rotation.
+          </p>
+        </section>
+        <section>
+          <h3 data-i18n="about.forestHeading">forest</h3>
+          <p data-i18n-html="about.forestBody">
+            The tool forms the exterior square and turns the superlevel sets of
+            its normalized height functions into rooted trees. A vertex
+            <span class="math-inline" data-tex="U_j">Uj</span> records an
+            elementary domino type; an edge
+            <span class="math-inline" data-tex="V^m">Vm</span> records its
+            extension weight.
+          </p>
+        </section>
+        <section>
+          <h3 data-i18n="about.outputHeading">output</h3>
+          <p data-i18n-html="about.outputBody">
+            The forest determines the displayed type sequence
+            <span class="math-inline" data-tex="J">J</span>, isogeny partition
+            <span class="math-inline" data-tex="\lambda">λ</span>, Artin
+            invariant
+            <span class="math-inline" data-tex="\sigma_{\mathrm{Art}}">σArt</span>,
+            <span class="math-inline" data-tex="p">p</span>-exponent, and
+            <span class="math-inline" data-tex="a">a</span>-number. The interval
+            plots compare the example with the bounds used in the paper.
+          </p>
+        </section>
+        <section class="about-scope">
+          <h3 data-i18n="about.scopeHeading">scope</h3>
+          <p data-i18n="about.scopeBody">
+            This is the cyclic combinatorial case. Unit coefficients are
+            normalized, and the page does not test geometric realizability or
+            the existence of a principal polarization.
+          </p>
+        </section>
+      </div>
+    </dialog>
+
+    <dialog
+      id="young-diagram-dialog"
+      class="young-diagram-dialog"
+      aria-labelledby="young-diagram-dialog-title"
+    >
+      <div class="young-diagram-dialog-heading">
+        <h2 id="young-diagram-dialog-title" data-i18n="young.title">
+          Young diagram
+        </h2>
+        <button id="young-diagram-close" type="button" data-i18n="action.close">
+          close
+        </button>
+      </div>
+      <div class="young-diagram-large-viewport">
+        <div id="young-diagram-large-stage" class="young-diagram-large-stage">
+          <div class="young-diagram-axis-corner" aria-hidden="true">r / c</div>
+          <canvas
+            id="young-diagram-column-axis"
+            class="young-diagram-axis"
+            width="1200"
+            height="36"
+            aria-hidden="true"
+          ></canvas>
+          <canvas
+            id="young-diagram-row-axis"
+            class="young-diagram-axis"
+            width="52"
+            height="640"
+            aria-hidden="true"
+          ></canvas>
+          <canvas
+            id="young-diagram-large-canvas"
+            width="1200"
+            height="640"
+            role="img"
+            aria-label="Enlarged Young diagram with 1-based row and column coordinates"
+            data-i18n-aria="young.largeAria"
+          ></canvas>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>
