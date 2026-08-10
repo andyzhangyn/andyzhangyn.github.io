@@ -39,7 +39,7 @@ export const profile = {
       "Before graduate school, I worked on algebraic combinatorics, especially Schubert calculus and k-Schur functions.",
     ],
     galleryIntroduction:
-      "I also enjoy visualizing mathematical concepts; some of my projects can be found in the",
+      "I also enjoy creating mathematical visualizations through vibe coding with the help of Codex and Claude Code; some of these projects can be found in the",
   },
 
   writing: [
