@@ -97,6 +97,14 @@ export const profile = {
     },
   ],
 
+  visits: [
+    {
+      dates: "17 August to 18 December 2026",
+      program: "Fall 2026 program on motivic homotopy theory",
+      href: "https://www.slmath.org/programs/384",
+    },
+  ],
+
   education: [
     {
       years: "2021–present",

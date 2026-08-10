@@ -34,6 +34,12 @@ export default function Home() {
                 <a href={profile.advisor.url}>{profile.advisor.name}</a>.
               </p>
               <p>{profile.introduction}</p>
+              {profile.visits.map((item) => (
+                <p key={item.program}>
+                  I will be visiting SLMath from {item.dates} for its{" "}
+                  <a href={item.href}>{item.program}</a>.
+                </p>
+              ))}
             </div>
           </section>
 
