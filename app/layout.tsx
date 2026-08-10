@@ -28,8 +28,8 @@ export const metadata: Metadata = {
       "P-adic geometry, cohomology in positive characteristic, prismatic cohomology, and the stacky approach.",
   },
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
+    icon: "/favicon.png?v=branch-node",
+    shortcut: "/favicon.png?v=branch-node",
   },
 };
 
