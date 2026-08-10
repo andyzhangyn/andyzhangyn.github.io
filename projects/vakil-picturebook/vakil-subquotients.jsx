@@ -1789,21 +1789,39 @@ const SvgMath = ({
 }) => {
   const x0 = anchor === "middle" ? x - width / 2 : anchor === "end" ? x - width : x;
   return (
-    <foreignObject
-      x={x0} y={y - height / 2} width={width} height={height}
-      style={{ overflow: "visible", cursor, pointerEvents }} onClick={onClick}
-    >
-      <div
-        xmlns="http://www.w3.org/1999/xhtml"
-        style={{
-          width: "100%", height: "100%", display: "flex", alignItems: "center",
-          justifyContent: anchor === "middle" ? "center" : anchor === "end" ? "flex-end" : "flex-start",
-          color, fontSize, lineHeight: 1, whiteSpace: "nowrap",
-        }}
+    <>
+      <foreignObject
+        className="vakil-svg-math-html"
+        x={x0} y={y - height / 2} width={width} height={height}
+        style={{ overflow: "visible", cursor, pointerEvents }} onClick={onClick}
       >
-        <Mx raw={raw} kx />
-      </div>
-    </foreignObject>
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            width: "100%", height: "100%", display: "flex", alignItems: "center",
+            justifyContent: anchor === "middle" ? "center" : anchor === "end" ? "flex-end" : "flex-start",
+            color, fontSize, lineHeight: 1, whiteSpace: "nowrap",
+          }}
+        >
+          <Mx raw={raw} kx />
+        </div>
+      </foreignObject>
+      <text
+        className="vakil-svg-math-native"
+        x={x}
+        y={y}
+        fill={color}
+        fontFamily={serif}
+        fontSize={fontSize}
+        fontStyle="italic"
+        textAnchor={anchor}
+        dominantBaseline="middle"
+        style={{ cursor, pointerEvents }}
+        onClick={onClick}
+      >
+        {raw}
+      </text>
+    </>
   );
 };
 const MathCap = ({ s, kx }) => {
@@ -2124,6 +2142,8 @@ export default function App() {
       .lang { background:none; border:none; padding:2px 4px; font-family:${mono};
         font-size:11px; color:${T.faint}; cursor:pointer; }
       .lang.on { color:${T.ink}; font-weight:700; }
+      .vakil-svg-math-native { display:none; }
+      .vakil-caption { box-sizing:border-box; }
       .vakil-mode-dag {
         position:relative; width:min(340px, calc(100vw - 20px)); height:700px;
         flex:0 0 auto; margin:0 0 8px;
@@ -2162,6 +2182,15 @@ export default function App() {
         pointer-events:none; z-index:1;
       }
       .vakil-dag-edges-desktop { display:none; }
+      @media (max-width: 600px) {
+        .vakil-mode-column .vakil-svg-math-html { display:none; }
+        .vakil-mode-column .vakil-svg-math-native { display:inline; }
+        .vakil-caption {
+          width:calc(100% - 16px) !important;
+          padding-right:12px;
+          padding-left:12px;
+        }
+      }
       @media (min-width: 1040px) {
         .vakil-gallery-home { justify-content:flex-start; }
         .vakil-mode-dag {
@@ -3265,7 +3294,7 @@ export default function App() {
   );
 
   return (
-    <div style={container}>
+    <div className={`vakil-mode-page${isCol ? " vakil-mode-column" : ""}`} style={container}>
       {css}
       {langBtns}
 
@@ -3344,7 +3373,7 @@ export default function App() {
         )}
       </div>
 
-      <div style={{
+      <div className="vakil-caption" style={{
         marginTop: 12, width: "100%", maxWidth: captionMaxWidth, minHeight: 48,
         borderTop: `1px solid ${T.line}`, paddingTop: 10,
         fontFamily: serif, fontSize: li === 0 ? 14 : 13.5, lineHeight: 1.6,

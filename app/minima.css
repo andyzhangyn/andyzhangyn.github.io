@@ -1628,6 +1628,10 @@ label:focus-visible {
     letter-spacing: 0.06em;
   }
 
+  .visualization-project-info {
+    position: static;
+  }
+
   .visualization-project-back {
     gap: 6px;
     padding-right: 10px;
