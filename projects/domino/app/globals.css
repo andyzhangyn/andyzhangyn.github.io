@@ -2550,14 +2550,6 @@ html.is-embedded .page-shell {
   color: var(--orange-deep);
 }
 
-.enriques-core-circle.is-semisimple-torsion {
-  color: var(--semisimple-deep);
-}
-
-.enriques-core-circle.is-nilpotent-torsion {
-  color: var(--nilpotent-deep);
-}
-
 .enriques-torsion-outline {
   z-index: 2;
   width: 22px;
@@ -2643,19 +2635,6 @@ html.is-embedded .page-shell {
 .enriques-readout-part.is-nilpotent-torsion .enriques-readout-mark {
   transform: rotate(45deg);
   border-radius: 2px;
-}
-
-.enriques-readout-part:is(.is-semisimple-torsion, .is-nilpotent-torsion)
-  .enriques-readout-mark::after {
-  position: absolute;
-  inset: 2px;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  content: "";
-}
-
-.enriques-readout-mark {
-  position: relative;
 }
 
 .spectral-matrix {
@@ -3453,14 +3432,6 @@ html.is-embedded .page-shell {
   transform: rotate(45deg);
   border-radius: 3px;
   color: var(--nilpotent-deep);
-}
-
-.spectral-part-button-mark:is(.is-semisimple-torsion, .is-nilpotent-torsion)::after {
-  position: absolute;
-  inset: 3px;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  content: "";
 }
 
 .spectral-part-button.is-slope-zero[aria-pressed="true"] {

@@ -1207,7 +1207,7 @@ function RaynaudSetup({ language }: { language: Language }) {
 
 export default function Home() {
   const { language, setLanguage } = useSiteLanguage();
-  const [openTutorialSection, setOpenTutorialSection] = useState<TutorialSection | null>(null);
+  const [openTutorialSection, setOpenTutorialSection] = useState<TutorialSection | null>("filtration");
   const [openDominoTopic, setOpenDominoTopic] = useState<DominoTopic | null>(null);
   const [preview, setPreview] = useState<Selection | null>(null);
   const [automaticPreview, setAutomaticPreview] = useState<AutomaticPreview | null>(null);

@@ -1928,12 +1928,6 @@ function EnriquesLattice({
           const showsNilpotentTorsion = Boolean(
             activeParts.nilpotentTorsion && term && term.nilpotentTorsion > 0,
           );
-          const coreClass = showsSlopeZero
-            ? "is-slope-zero"
-            : showsSemisimpleTorsion
-              ? "is-semisimple-torsion"
-              : "is-nilpotent-torsion";
-
           return (
             <span
               className={`spectral-node enriques-spectral-node${isVisible ? " is-active" : ""}`}
@@ -1947,7 +1941,9 @@ function EnriquesLattice({
             >
               {isVisible ? (
                 <span className="enriques-term-parts" aria-hidden="true">
-                  <span className={`enriques-core-circle ${coreClass}`} />
+                  {showsSlopeZero ? (
+                    <span className="enriques-core-circle is-slope-zero" />
+                  ) : null}
                   {showsSemisimpleTorsion ? (
                     <span className="enriques-torsion-outline is-semisimple-torsion" />
                   ) : null}
