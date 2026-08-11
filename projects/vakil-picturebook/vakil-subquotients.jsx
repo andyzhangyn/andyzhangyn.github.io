@@ -1783,6 +1783,9 @@ const Mx = ({ raw, kx }) => {
   }
   return <span style={{ fontStyle: "italic" }}>{raw}</span>;
 };
+const useSafariSvgText = typeof navigator !== "undefined" &&
+  /Safari/i.test(navigator.userAgent) &&
+  !/(Chrome|Chromium|CriOS|Edg|OPR|FxiOS)/i.test(navigator.userAgent);
 const SvgMath = ({
   raw, x, y, width = 100, height = 28, fontSize = 14,
   color = T.ink, anchor = "middle", cursor, onClick, pointerEvents,
@@ -1793,7 +1796,10 @@ const SvgMath = ({
       <foreignObject
         className="vakil-svg-math-html"
         x={x0} y={y - height / 2} width={width} height={height}
-        style={{ overflow: "visible", cursor, pointerEvents }} onClick={onClick}
+        style={{
+          display: useSafariSvgText ? "none" : undefined,
+          overflow: "visible", cursor, pointerEvents,
+        }} onClick={onClick}
       >
         <div
           xmlns="http://www.w3.org/1999/xhtml"
@@ -1815,8 +1821,11 @@ const SvgMath = ({
         fontSize={fontSize}
         fontStyle="italic"
         textAnchor={anchor}
-        dominantBaseline="middle"
-        style={{ cursor, pointerEvents }}
+        dy="0.35em"
+        style={{
+          display: useSafariSvgText ? "inline" : undefined,
+          cursor, pointerEvents,
+        }}
         onClick={onClick}
       >
         {raw}
@@ -2102,6 +2111,17 @@ function GalleryDagEdges({ variant }) {
   );
 }
 
+const navigationMessageType = "vakil-picturebook:navigate-top";
+
+function requestPageTop() {
+  if (window.parent === window) {
+    window.scrollTo({ top: 0, behavior: "auto" });
+    return;
+  }
+
+  window.parent.postMessage({ type: navigationMessageType }, window.location.origin);
+}
+
 export default function App() {
   const requestedGalleryMode = typeof window === "undefined"
     ? null
@@ -2120,7 +2140,12 @@ export default function App() {
   const KEYS = Object.keys(MODES);
   const hue = (o) => HUE[o] || T.ink;
   const t = (pair) => pair[li];
-  const go = (m2) => { setMode(m2); setSel(null); setPage(0); };
+  const go = (m2) => {
+    setMode(m2);
+    setSel(null);
+    setPage(0);
+    requestPageTop();
+  };
   const container = {
     minHeight: "100vh", background: T.paper, color: T.ink,
     padding: "22px 10px 36px", boxSizing: "border-box", position: "relative",
@@ -3497,7 +3522,7 @@ export default function App() {
         <button className="tile" type="button"
           aria-label={li === 0 ? "返回章节导航" : "Back to chapter map"}
           title={li === 0 ? "返回章节导航" : "Back to chapter map"}
-          onClick={() => { setMode(null); setScopeOpen(false); }}
+          onClick={() => { go(null); setScopeOpen(false); }}
           style={{ ...navBtn, marginLeft: 0 }}>
           <svg viewBox="0 0 20 20" width={15} height={15} aria-hidden="true">
             <path d="M 9 4 L 3 10 L 9 16 M 3.5 10 H 17"
