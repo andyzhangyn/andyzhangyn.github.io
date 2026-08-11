@@ -23,11 +23,6 @@ export default function VakilPicturebookPage() {
   return (
     <VisualizationProjectShell
       title="Vakil's Picturebook"
-      info="Throughout, we work with abelian groups, or more generally in an abelian category. Each cell is a successive filtration quotient; adjacency and overlap record canonical isomorphisms."
-      externalLink={{
-        href: "https://www.3blue1brown.com/assets/PuzzlingThroughExactSequences-BKude_FX.pdf",
-        label: "original PDF",
-      }}
     >
       <EmbeddedVakilPicturebook />
     </VisualizationProjectShell>

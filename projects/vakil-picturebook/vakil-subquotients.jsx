@@ -739,7 +739,7 @@ const FIL = (() => {
 // ———— the eight pictures (strings are [zh, en]) ————
 const MODES = {
   map: {
-    title: ["映射", "A map"],
+    title: ["一个态射", "One Morphism"],
     objects: ["X", "Y"],
     shapes: { X: MAP_PUZZLE.span(0, 2), Y: MAP_PUZZLE.span(1, 3) },
     regions: [
@@ -2144,6 +2144,122 @@ export default function App() {
       .lang.on { color:${T.ink}; font-weight:700; }
       .vakil-svg-math-native { display:none; }
       .vakil-caption { box-sizing:border-box; }
+      .vakil-introduction {
+        position:relative; display:block; box-sizing:border-box;
+        width:min(760px, calc(100vw - 36px));
+        overflow:hidden; margin:0 auto 32px; padding:28px 34px 26px;
+        border:1px solid #D7CFBD; border-radius:3px; color:#514B42;
+        background:linear-gradient(135deg, rgba(255,253,248,.78), rgba(242,236,222,.42));
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.78), 0 10px 28px rgba(62,52,38,.045);
+        font-family:${serif}; text-align:left;
+      }
+      .vakil-introduction::before {
+        position:absolute; top:-1px; left:29px; width:108px; height:3px;
+        background:linear-gradient(90deg, ${T.A} 0 33.333%, ${T.B} 33.333% 66.666%, ${T.C} 66.666%);
+        content:"";
+      }
+      .vakil-introduction-copy { min-width:0; align-self:center; }
+      .vakil-introduction p { margin:0; }
+      .vakil-introduction-lede { font-size:15px; line-height:1.58; }
+      .vakil-introduction-initial {
+        position:relative; float:left; display:grid; box-sizing:border-box;
+        width:104px; height:112px; place-items:center; overflow:hidden;
+        margin:2px 17px 5px 0; border:1px solid #CFC5AF; border-radius:2px;
+        color:${T.ink}; background:
+          linear-gradient(135deg, rgba(178,58,42,.13) 0 33.333%, transparent 33.333%),
+          linear-gradient(225deg, rgba(46,94,140,.12) 0 33.333%, transparent 33.333%),
+          linear-gradient(315deg, rgba(74,107,79,.11) 0 33.333%, transparent 33.333%),
+          rgba(247,243,234,.82);
+        box-shadow:inset 0 0 0 4px rgba(255,253,248,.56);
+        font-family:${serif}; font-size:82px; font-weight:400; line-height:.8;
+        text-shadow:0 1px 0 rgba(255,255,255,.72);
+      }
+      .vakil-introduction-initial::after {
+        position:absolute; inset:7px; border:1px solid rgba(154,146,128,.22);
+        content:""; pointer-events:none;
+      }
+      .vakil-introduction-initial.is-chinese { font-size:65px; }
+      .vakil-introduction-guide {
+        margin-top:10px !important; color:#776F62; font-size:12.5px; line-height:1.58;
+      }
+      .vakil-introduction-convention {
+        clear:both; margin-top:14px !important; border-left:2px solid ${T.line};
+        padding-left:11px; color:#877F70; font-size:11px; line-height:1.52;
+      }
+      .vakil-introduction-source {
+        clear:both; display:flex; width:max-content; max-width:100%;
+        align-items:baseline; flex-wrap:wrap; gap:5px;
+        margin-top:15px; border-top:1px solid ${T.line}; padding-top:10px;
+        color:${T.ink}; font-family:${serif}; font-size:11px; line-height:1.35;
+        text-decoration:none;
+      }
+      .vakil-introduction-source-label {
+        color:${T.faint}; font-family:${mono}; font-size:7.5px;
+        letter-spacing:.14em; text-transform:uppercase;
+      }
+      .vakil-introduction-source-title { font-style:italic; }
+      .vakil-introduction-source-arrow {
+        margin-left:2px; color:${T.faint}; font-family:${mono}; font-size:9px;
+        transition:transform .14s ease, color .14s ease;
+      }
+      .vakil-introduction-source:hover .vakil-introduction-source-arrow {
+        color:${T.ink}; transform:translate(1px, -1px);
+      }
+      .vakil-module-introduction {
+        position:relative; box-sizing:border-box; width:100%; max-width:520px;
+        overflow:hidden; margin:2px auto 20px; padding:20px 22px 18px;
+        border:1px solid #D7CFBD; border-radius:3px; color:#514B42;
+        background:linear-gradient(135deg, rgba(255,253,248,.78), rgba(242,236,222,.4));
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.74), 0 8px 22px rgba(62,52,38,.04);
+        font-family:${serif}; text-align:left;
+      }
+      .vakil-module-introduction::before {
+        position:absolute; top:-1px; left:21px; width:72px; height:3px;
+        background:linear-gradient(90deg, ${T.A} 0 33.333%, ${T.B} 33.333% 66.666%, ${T.C} 66.666%);
+        content:"";
+      }
+      .vakil-module-lede { margin:0; font-size:13.5px; line-height:1.58; }
+      .vakil-module-insight {
+        margin:9px 0 0; color:#776F62; font-size:12.5px; line-height:1.58;
+      }
+      .vakil-module-insight-clear { clear:both; padding-top:1px; }
+      .vakil-module-reference {
+        display:inline-flex; align-items:center; gap:3px; height:18px;
+        box-sizing:border-box; vertical-align:middle; position:relative; top:-1px;
+        margin:0 .24em; padding:0 4px 0 5px; border:1px solid #D5CCB8;
+        border-radius:7px; background:rgba(247,243,234,.82); color:${T.ink};
+        cursor:pointer; box-shadow:inset 0 1px 0 rgba(255,255,255,.72);
+        transition:transform .14s ease, border-color .14s ease, background-color .14s ease;
+      }
+      .vakil-module-reference:hover,
+      .vakil-module-reference:focus-visible {
+        transform:translateY(-1px); border-color:#AFA48E; background:#F8F4EA;
+      }
+      .vakil-module-reference-number {
+        color:${T.faint}; font-family:${mono}; font-size:7.5px; letter-spacing:.08em;
+      }
+      .vakil-module-reference svg { display:block; width:17px; height:17px; }
+      .vakil-module-initial {
+        width:76px; height:82px; margin:1px 14px 4px 0;
+        font-size:59px;
+      }
+      .vakil-module-initial.is-chinese { font-size:48px; }
+      .vakil-module-question {
+        clear:both; display:grid; grid-template-columns:auto minmax(0, 1fr);
+        align-items:start; gap:10px; margin-top:14px; border-top:1px solid ${T.line};
+        padding-top:11px;
+      }
+      .vakil-module-question-label {
+        color:${T.faint}; font-family:${mono}; font-size:7.5px;
+        letter-spacing:.13em; line-height:1.6; text-transform:uppercase;
+      }
+      .vakil-module-question-text {
+        color:#6D6559; font-size:12px; font-style:italic; line-height:1.52;
+      }
+      .vakil-module-question-hint {
+        display:block; margin-top:3px; color:#8A8173; font-size:10.5px;
+        font-style:normal;
+      }
       .vakil-mode-dag {
         position:relative; width:min(340px, calc(100vw - 20px)); height:700px;
         flex:0 0 auto; margin:0 0 8px;
@@ -2177,12 +2293,52 @@ export default function App() {
       .vakil-mode-button:focus-visible .vakil-mode-tooltip {
         opacity:1; transform:translate(-50%, 0);
       }
+      .vakil-page-nav { position:relative; }
+      .vakil-page-nav-tooltip {
+        position:absolute; left:50%; bottom:calc(100% + 7px);
+        transform:translate(-50%, 3px); z-index:6; opacity:0;
+        padding:4px 8px 5px; border:1px solid ${T.line}; border-radius:7px;
+        background:rgba(247,243,234,.98); box-shadow:0 3px 10px rgba(42,38,32,.10);
+        color:${T.ink}; font-family:${serif}; font-size:11px; line-height:1.15;
+        white-space:nowrap; pointer-events:none;
+        transition:opacity .14s ease, transform .14s ease;
+      }
+      .vakil-page-nav:hover .vakil-page-nav-tooltip,
+      .vakil-page-nav:focus-visible .vakil-page-nav-tooltip {
+        opacity:1; transform:translate(-50%, 0);
+      }
       .vakil-dag-edges {
         position:absolute; inset:0; width:100%; height:100%; overflow:visible;
         pointer-events:none; z-index:1;
       }
       .vakil-dag-edges-desktop { display:none; }
       @media (max-width: 600px) {
+        .vakil-introduction {
+          width:min(340px, calc(100vw - 28px));
+          margin-bottom:22px; padding:21px 18px 20px;
+        }
+        .vakil-introduction::before { left:18px; width:82px; }
+        .vakil-introduction-initial {
+          width:84px; height:92px; margin:2px 13px 4px 0;
+          font-size:67px;
+        }
+        .vakil-introduction-initial.is-chinese { font-size:53px; }
+        .vakil-introduction-lede { font-size:13.5px; line-height:1.55; }
+        .vakil-introduction-guide { margin-top:9px !important; font-size:12px; line-height:1.55; }
+        .vakil-introduction-convention { margin-top:12px !important; font-size:10.5px; }
+        .vakil-introduction-source { margin-top:13px; padding-top:9px; }
+        .vakil-module-introduction {
+          width:calc(100% - 12px); margin-bottom:16px; padding:18px 16px 16px;
+        }
+        .vakil-module-introduction::before { left:16px; width:62px; }
+        .vakil-module-lede { font-size:12.5px; line-height:1.55; }
+        .vakil-module-insight { margin-top:8px; font-size:11.7px; line-height:1.55; }
+        .vakil-module-initial {
+          width:66px; height:72px; margin-right:11px; font-size:51px;
+        }
+        .vakil-module-initial.is-chinese { font-size:42px; }
+        .vakil-module-question { grid-template-columns:minmax(0, 1fr); gap:4px; }
+        .vakil-module-question-text { font-size:11.5px; }
         .vakil-svg-math-html { display:none; }
         .vakil-svg-math-native { display:inline; }
         .vakil-caption {
@@ -2222,6 +2378,38 @@ export default function App() {
       <div className="vakil-gallery-home" style={{ ...container, padding: "48px 10px 46px" }}>
         {css}
         {langBtns}
+        <section className="vakil-introduction" aria-label={li === 0 ? "简介" : "Introduction"}>
+          <div className="vakil-introduction-copy">
+            <p className="vakil-introduction-lede">
+              <span className={`vakil-introduction-initial${li === 0 ? " is-chinese" : ""}`}>
+                {li === 0 ? "在" : "F"}
+              </span>
+              {li === 0
+                ? "很长一段时间里，我只知道谱序列微分的规则，却不能真正“看见”它为什么以这样的方式移动。Vakil 的讲义补上了这个缺失的图像：从关于态射和子商最朴素的直觉出发，同一种视觉语言逐步发展为蛇引理、长正合列，最后成为一个微分如何运作都清晰可见的谱序列。"
+                : "or a long time, I knew the rule for the differential in a spectral sequence, but I could not really see why it moved that way. Vakil’s notes supplied the missing picture: starting from the simplest intuition about maps and subquotients, the same visual language develops into the snake lemma, long exact sequences, and finally a spectral sequence whose differentials one can watch at work."}
+            </p>
+            <p className="vakil-introduction-guide">
+              {li === 0
+                ? "制作这本互动图册，正是想把这种直觉传递下去。读到最后，我希望读者不再只是记得规则，而是能“看见”谱序列如何运作，并理解它的微分为何走向那里。令我着迷的是，一个如此简单的图像竟能一步步生长出如此丰富的结构。对我来说，Vakil 的这些图像确实捕捉到了某种真正非平凡的东西。"
+                : "I made this interactive companion to pass that intuition on. By the end, I hope the reader can do more than remember the rule: they can see a spectral sequence working and understand why its differential goes where it does. What still moves me is how an elementary picture can grow, step by step, into something unexpectedly rich. To me, Vakil captured something genuinely non-trivial in these pictures."}
+            </p>
+            <p className="vakil-introduction-convention">
+              {li === 0
+                ? "我们始终在阿贝尔群——更一般地，在阿贝尔范畴——中工作。每个色块表示一个逐次滤过商，而相邻与重叠记录典范同构。"
+                : "Throughout, we work with abelian groups—or more generally in an abelian category. Each colored cell is a successive filtration quotient; adjacency and overlap record canonical isomorphisms."}
+            </p>
+            <a className="vakil-introduction-source"
+              href="https://www.3blue1brown.com/assets/PuzzlingThroughExactSequences-BKude_FX.pdf"
+              target="_blank" rel="noreferrer">
+              <span className="vakil-introduction-source-label">
+                {li === 0 ? "原文" : "Source"}
+              </span>
+              <span>Ravi Vakil · </span>
+              <span className="vakil-introduction-source-title">Puzzling Through Exact Sequences</span>
+              <span className="vakil-introduction-source-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </section>
         <div className="vakil-mode-dag">
           <GalleryDagEdges variant="mobile" />
           <GalleryDagEdges variant="desktop" />
@@ -2258,6 +2446,10 @@ export default function App() {
   const isCol = M.layout === "col";
   const isSpec = mode === "spec";
   const isFil = mode === "fil";
+  const hasChapterIntroduction = mode === "map" || mode === "ses" || mode === "iso3"
+    || mode === "two" || mode === "tri" || mode === "sq" || mode === "snake"
+    || mode === "cx" || mode === "mapH" || mode === "les" || mode === "fil"
+    || mode === "spec";
   const spectralStageName = page === 4 ? "E4 = E∞" : `E${page}`;
   const contentMaxWidth = isSpec ? 720 : isFil ? 620 : 520;
   const captionMaxWidth = isSpec ? 660 : isFil ? 560 : 480;
@@ -3302,11 +3494,15 @@ export default function App() {
         display: "flex", alignItems: "center", width: "100%", maxWidth: contentMaxWidth,
         margin: "0 0 12px", paddingRight: 56, boxSizing: "border-box",
       }}>
-        <button className="tile" onClick={() => { setMode(null); setScopeOpen(false); }} style={{ ...navBtn, marginLeft: 0 }}>
-          <svg viewBox="0 0 20 20" width={14} height={14}>
-            {[3, 10, 17].map((gx) => [3, 10, 17].map((gy) => (
-              <circle key={gx + "-" + gy} cx={gx} cy={gy} r={1.9} fill={T.ink} />
-            )))}
+        <button className="tile" type="button"
+          aria-label={li === 0 ? "返回章节导航" : "Back to chapter map"}
+          title={li === 0 ? "返回章节导航" : "Back to chapter map"}
+          onClick={() => { setMode(null); setScopeOpen(false); }}
+          style={{ ...navBtn, marginLeft: 0 }}>
+          <svg viewBox="0 0 20 20" width={15} height={15} aria-hidden="true">
+            <path d="M 9 4 L 3 10 L 9 16 M 3.5 10 H 17"
+              fill="none" stroke={T.ink} strokeWidth={1.7}
+              strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
         <div style={{
@@ -3318,9 +3514,401 @@ export default function App() {
         <div style={{ width: 34 }} />
       </div>
 
+      {mode === "map" ? (
+        <section className="vakil-module-introduction"
+          aria-label={li === 0 ? "第一章简介" : "Introduction to chapter one"}>
+          <p className="vakil-module-lede">
+            <span className={`vakil-introduction-initial vakil-module-initial${li === 0 ? " is-chinese" : ""}`}>
+              {li === 0 ? "我" : "W"}
+            </span>
+            <MathCap s={li === 0
+              ? "们从最简单的数据开始：一个态射 φ: X → Y。点击拼图图像或公式中的任一部分，下方都会显示它的名称与相应解释。"
+              : "e begin with the simplest possible datum: a map φ: X → Y. Click either the puzzle diagram or the formula; the name of the selected piece and a short explanation will appear below."} kx={kx} />
+          </p>
+          <p className="vakil-module-insight">
+            <MathCap s={li === 0
+              ? "拼图的朝向编码了 φ 的方向。中间一块在 X 一侧读作 coim(φ)，在 Y 一侧读作 im(φ)；二者的典范同构 coim(φ) ≅ im(φ) 正是第一同构定理。"
+              : "The orientation of the jigsaw records the direction of φ. The middle piece is read as coim(φ) on the X side and im(φ) on the Y side; their canonical identification coim(φ) ≅ im(φ) is the first isomorphism theorem."} kx={kx} />
+          </p>
+          <div className="vakil-module-question">
+            <span className="vakil-module-question-label">
+              {li === 0 ? "思考题" : "A question"}
+            </span>
+            <span className="vakil-module-question-text">
+              <MathCap s={li === 0
+                ? "如果 φ 是单射或满射，这幅图分别会变成什么样？"
+                : "If φ is injective, or if it is surjective, what must the picture become?"} kx={kx} />
+            </span>
+          </div>
+        </section>
+      ) : null}
+
+      {mode === "ses" ? (
+        <section className="vakil-module-introduction"
+          aria-label={li === 0 ? "第二章简介" : "Introduction to chapter two"}>
+          <p className="vakil-module-lede">
+            <span className={`vakil-introduction-initial vakil-module-initial${li === 0 ? " is-chinese" : ""}`}>
+              {li === 0 ? "在" : "H"}
+            </span>
+            <MathCap s={li === 0
+              ? "这里，我们描绘一个短正合列 0 → B → A → C → 0。如果你回答了 01 里的思考题，就会发现这幅图同时编码了一个单射和一个满射。"
+              : "ere we picture a short exact sequence 0 → B → A → C → 0. If you answered the question in 01, you will notice that this single picture encodes both an injection and a surjection."} kx={kx} />
+          </p>
+          <p className="vakil-module-insight">
+            {li === 0
+              ? "令人意外的是，短正合列的图竟然比单个态射的图还要简单。"
+              : "Surprisingly, the picture of a short exact sequence is even simpler than the picture of a single map."}
+          </p>
+        </section>
+      ) : null}
+
+      {mode === "iso3" ? (
+        <section className="vakil-module-introduction"
+          aria-label={li === 0 ? "第三章简介" : "Introduction to chapter three"}>
+          <p className="vakil-module-lede">
+            <span className={`vakil-introduction-initial vakil-module-initial${li === 0 ? " is-chinese" : ""}`}>
+              {li === 0 ? "在" : "H"}
+            </span>
+            <MathCap s={li === 0
+              ? "这里，我们描绘一个三步滤过 0 ⊂ C ⊂ B ⊂ A。它看起来很像"
+              : "ere we picture a three-step filtration 0 ⊂ C ⊂ B ⊂ A. It resembles"} kx={kx} />
+            <button type="button" className="vakil-module-reference"
+              aria-label={li === 0 ? "前往 01：一个态射" : "Go to 01: One Morphism"}
+              title={li === 0 ? "01 · 一个态射" : "01 · One Morphism"}
+              onClick={() => go("map")}>
+              <span className="vakil-module-reference-number">01</span>
+              <Icon k="map" s={22} />
+            </button>
+            <MathCap s={li === 0
+              ? "，但记录的不是一个态射，而是层层嵌套的子对象。"
+              : ", but records nested subobjects rather than a map."} kx={kx} />
+          </p>
+          <p className="vakil-module-insight">
+            {li === 0
+              ? "完整的拼图还应记录各层之间的包含关系，Vakil 的原文画出了这些线。这里借助可点击的公式呈现同样的信息，因而省略了它们。"
+              : "A complete puzzle would also record the inclusions between its layers, as Vakil does in the original PDF. Here the clickable formulas reveal the same information, so those lines are omitted."}
+          </p>
+          <div className="vakil-module-question">
+            <span className="vakil-module-question-label">
+              {li === 0 ? "请读图" : "Read the picture"}
+            </span>
+            <span className="vakil-module-question-text">
+              <MathCap s={li === 0
+                ? "在拼图与公式之间来回点击，读出第三同构定理：(A∕C)∕(B∕C) ≅ A∕B。"
+                : "Move between the puzzle and the formulas to read off the third isomorphism theorem: (A∕C)∕(B∕C) ≅ A∕B."} kx={kx} />
+            </span>
+          </div>
+        </section>
+      ) : null}
+
+      {mode === "two" ? (
+        <section className="vakil-module-introduction"
+          aria-label={li === 0 ? "第四章简介" : "Introduction to chapter four"}>
+          <p className="vakil-module-lede">
+            <span className={`vakil-introduction-initial vakil-module-initial${li === 0 ? " is-chinese" : ""}`}>
+              {li === 0 ? "从" : "M"}
+            </span>
+            <MathCap s={li === 0
+              ? "一个态射变成两个态射，公式一侧改变不大，拼图却明显复杂了许多。"
+              : "oving from one map to two changes little on the formula side, but makes the puzzle diagram visibly more intricate."} kx={kx} />
+          </p>
+          <p className="vakil-module-insight">
+            <MathCap s={li === 0
+              ? "最醒目的是 B 与 C 的一小块重叠。它并不表示 B → C，而是表示同一个来自 A 的子商同时出现在 B 与 C 的滤过中。"
+              : "The most striking feature is the small overlap between B and C. It does not represent a map B → C; it marks the same subquotient inherited from A in the filtrations of both B and C."} kx={kx} />
+          </p>
+          <div className="vakil-module-question">
+            <span className="vakil-module-question-label">
+              {li === 0 ? "思考题" : "A question"}
+            </span>
+            <span className="vakil-module-question-text">
+              <MathCap s={li === 0
+                ? "怎样从拼图本身看出 B 与 C 之间并没有一个态射？"
+                : "How can you tell from the puzzle itself that there is no map between B and C?"} kx={kx} />
+            </span>
+          </div>
+        </section>
+      ) : null}
+
+      {mode === "tri" ? (
+        <section className="vakil-module-introduction"
+          aria-label={li === 0 ? "第五章简介" : "Introduction to chapter five"}>
+          <p className="vakil-module-lede">
+            <span className={`vakil-introduction-initial vakil-module-initial${li === 0 ? " is-chinese" : ""}`}>
+              {li === 0 ? "如" : "R"}
+            </span>
+            <MathCap s={li === 0
+              ? "果我们换一个顺序书写公式，就会得到一个交换三角。它的图与"
+              : "earranging the formula produces a commuting triangle. Its picture closely resembles"} kx={kx} />
+            <button type="button" className="vakil-module-reference"
+              aria-label={li === 0 ? "前往 04：两个映射" : "Go to 04: Two Morphisms"}
+              title={li === 0 ? "04 · 两个映射" : "04 · Two Morphisms"}
+              onClick={() => go("two")}>
+              <span className="vakil-module-reference-number">04</span>
+              <Icon k="two" s={22} />
+            </button>
+            <MathCap s={li === 0
+              ? "，只是拼图锯齿改变了方向；正是这个变化编码出了 A → C。"
+              : "; only the direction of the jigsaw seams has changed, and that change encodes a map A → C."} kx={kx} />
+          </p>
+          <div className="vakil-module-question">
+            <span className="vakil-module-question-label">
+              {li === 0 ? "思考题" : "A question"}
+            </span>
+            <span className="vakil-module-question-text">
+              {li === 0
+                ? "这幅图与 Venn diagram 有什么区别？"
+                : "How is this picture different from a Venn diagram?"}
+              <span className="vakil-module-question-hint">
+                {li === 0
+                  ? "提示：数一数其中可能非空的区域。"
+                  : "Hint: count its possibly non-empty regions."}
+              </span>
+            </span>
+          </div>
+        </section>
+      ) : null}
+
+      {mode === "sq" ? (
+        <section className="vakil-module-introduction"
+          aria-label={li === 0 ? "第六章简介" : "Introduction to chapter six"}>
+          <p className="vakil-module-lede">
+            <span className={`vakil-introduction-initial vakil-module-initial${li === 0 ? " is-chinese" : ""}`}>
+              {li === 0 ? "这" : "H"}
+            </span>
+            {li === 0
+              ? "里，我们迎来这本图册中第一幅真正漂亮且非平凡的图：交换方块。"
+              : "ere we reach the first truly beautiful and non-trivial picture in the book: a commuting square."}
+          </p>
+          <p className="vakil-module-insight">
+            {li === 0
+              ? "最引人注意的是，中央方格被分成了三个区域。同一区域可以从周围不同对象中读成不同的子商，由此显现出许多典范同构。"
+              : "Most strikingly, the central square splits into three regions. The same region can be read as different subquotients of the surrounding objects, revealing several canonical isomorphisms."}
+          </p>
+          <div className="vakil-module-question">
+            <span className="vakil-module-question-label">
+              {li === 0 ? "思考题" : "A question"}
+            </span>
+            <span className="vakil-module-question-text">
+              <MathCap s={li === 0
+                ? "中央的 ⑤ 同时属于 A、B、C、D。沿着四个对象分别读取它，会得到哪四个子商？为什么它们彼此典范同构？"
+                : "The central region ⑤ belongs to A, B, C, and D. Reading it from each of the four objects, which four subquotients do you obtain, and why are they canonically isomorphic?"} kx={kx} />
+              <span className="vakil-module-question-hint">
+                <MathCap s={li === 0
+                  ? "提示：先从 A∕ker h 与 im h 开始，再比较经过 B 和 D 的两条路径。"
+                  : "Hint: begin with A∕ker h and im h, then compare the two paths through B and D."} kx={kx} />
+              </span>
+            </span>
+          </div>
+        </section>
+      ) : null}
+
+      {mode === "snake" ? (
+        <section className="vakil-module-introduction"
+          aria-label={li === 0 ? "第七章简介" : "Introduction to chapter seven"}>
+          <p className="vakil-module-lede">
+            <span className={`vakil-introduction-initial vakil-module-initial${li === 0 ? " is-chinese" : ""}`}>
+              {li === 0 ? "在" : "H"}
+            </span>
+            {li === 0
+              ? "这里，我们用两个交换方块连接两条短正合列。令人意外的是，这幅图竟然比"
+              : "ere two commuting squares connect a pair of short exact sequences. Surprisingly, this picture is even simpler than the single commuting square in"}
+            <button type="button" className="vakil-module-reference"
+              aria-label={li === 0 ? "前往 06：交换方块" : "Go to 06: Commuting Square"}
+              title={li === 0 ? "06 · 交换方块" : "06 · Commuting Square"}
+              onClick={() => go("sq")}>
+              <span className="vakil-module-reference-number">06</span>
+              <Icon k="sq" s={22} />
+            </button>
+            {li === 0
+              ? "中的单个交换方块还要简单。"
+              : "."}
+          </p>
+          <p className="vakil-module-insight">
+            {li === 0
+              ? "蛇引理告诉我们，三个竖直态射的核与余核会组成一条长正合列。"
+              : "The Snake Lemma says that the kernels and cokernels of the three vertical maps fit together into a long exact sequence."}
+          </p>
+          <div className="vakil-module-question">
+            <span className="vakil-module-question-label">
+              {li === 0 ? "思考题" : "A question"}
+            </span>
+            <span className="vakil-module-question-text">
+              {li === 0
+                ? "你能看出这条长正合列在图中是如何表示的吗？能否直接读取拼图，把它写出来？"
+                : "Can you see how this long exact sequence is represented in the picture? Can you read the puzzle directly and write it down?"}
+            </span>
+          </div>
+        </section>
+      ) : null}
+
+      {mode === "cx" ? (
+        <section className="vakil-module-introduction"
+          aria-label={li === 0 ? "第八章简介" : "Introduction to chapter eight"}>
+          <p className="vakil-module-lede">
+            <span className={`vakil-introduction-initial vakil-module-initial${li === 0 ? " is-chinese" : ""}`}>
+              {li === 0 ? "复" : "A"}
+            </span>
+            {li === 0
+              ? "形就是一串首尾相接的长方形拼图；其中没有被相邻两块共同覆盖的部分，正是这个复形的上同调。"
+              : " complex is a chain of rectangular jigsaw pieces joined end to end; the parts not covered by two neighboring pieces are precisely its cohomology."}
+          </p>
+          <p className="vakil-module-insight">
+            {li === 0
+              ? "特别地，如果这些中间部分全都变成 0，这个复形就成为一条长正合列。"
+              : "In particular, if all these middle pieces become zero, the complex is a long exact sequence."}
+          </p>
+        </section>
+      ) : null}
+
+      {mode === "mapH" ? (
+        <section className="vakil-module-introduction"
+          aria-label={li === 0 ? "第九章简介" : "Introduction to chapter nine"}>
+          <p className="vakil-module-lede">
+            <span className={`vakil-introduction-initial vakil-module-initial${li === 0 ? " is-chinese" : ""}`}>
+              {li === 0 ? "我" : "W"}
+            </span>
+            {li === 0
+              ? "们也可以用交换方块把两个复形连接起来——也就是把"
+              : "e can also use commuting squares to connect two complexes—superimposing the visual languages of"}
+            <button type="button" className="vakil-module-reference"
+              aria-label={li === 0 ? "前往 06：交换方块" : "Go to 06: Commuting Square"}
+              title={li === 0 ? "06 · 交换方块" : "06 · Commuting Square"}
+              onClick={() => go("sq")}>
+              <span className="vakil-module-reference-number">06</span>
+              <Icon k="sq" s={22} />
+            </button>
+            {li === 0 ? "与" : "and"}
+            <button type="button" className="vakil-module-reference"
+              aria-label={li === 0 ? "前往 08：复形与上同调" : "Go to 08: Complex & cohomology"}
+              title={li === 0 ? "08 · 复形与上同调" : "08 · Complex & cohomology"}
+              onClick={() => go("cx")}>
+              <span className="vakil-module-reference-number">08</span>
+              <Icon k="cx" s={22} />
+            </button>
+            {li === 0 ? "中的两种图像语言叠在一起。" : "."}
+          </p>
+          <p className="vakil-module-insight">
+            {li === 0
+              ? "复形态射自然诱导一个上同调态射。请看，它的像在整幅图中只占多么小的一块！"
+              : "A map of complexes naturally induces a map on cohomology. Notice how tiny its image is in the full picture!"}
+          </p>
+        </section>
+      ) : null}
+
+      {mode === "les" ? (
+        <section className="vakil-module-introduction"
+          aria-label={li === 0 ? "第十章简介" : "Introduction to chapter ten"}>
+          <p className="vakil-module-lede">
+            <span className={`vakil-introduction-initial vakil-module-initial${li === 0 ? " is-chinese" : ""}`}>
+              {li === 0 ? "当" : "W"}
+            </span>
+            {li === 0 ? "我们把" : "hen we combine"}
+            <button type="button" className="vakil-module-reference"
+              aria-label={li === 0 ? "前往 08：复形与上同调" : "Go to 08: Complex & cohomology"}
+              title={li === 0 ? "08 · 复形与上同调" : "08 · Complex & cohomology"}
+              onClick={() => go("cx")}>
+              <span className="vakil-module-reference-number">08</span>
+              <Icon k="cx" s={22} />
+            </button>
+            {li === 0 ? "与" : "with"}
+            <button type="button" className="vakil-module-reference"
+              aria-label={li === 0 ? "前往 02：短正合列" : "Go to 02: Short exact sequence"}
+              title={li === 0 ? "02 · 短正合列" : "02 · Short exact sequence"}
+              onClick={() => go("ses")}>
+              <span className="vakil-module-reference-number">02</span>
+              <Icon k="ses" s={22} />
+            </button>
+            {li === 0
+              ? "结合起来，图就变得更加丰富了。复形的短正合列会引出一条上同调长正合列；这是代数拓扑入门课里的基本工具，通常用 diagram chasing 证明。"
+              : ", the picture becomes even richer. A short exact sequence of complexes gives rise to a long exact sequence in cohomology—a basic tool from a first course in algebraic topology, usually proved by diagram chasing."}
+          </p>
+          <div className="vakil-module-question">
+            <span className="vakil-module-question-label">
+              {li === 0 ? "请读图" : "Read the picture"}
+            </span>
+            <span className="vakil-module-question-text">
+              {li === 0 ? "如果你已经理解了如何从" : "If you understood how to read the kernel–cokernel sequence from"}
+              <button type="button" className="vakil-module-reference"
+                aria-label={li === 0 ? "前往 07：蛇引理" : "Go to 07: Snake lemma"}
+                title={li === 0 ? "07 · 蛇引理" : "07 · Snake lemma"}
+                onClick={() => go("snake")}>
+                <span className="vakil-module-reference-number">07</span>
+                <Icon k="snake" s={22} />
+              </button>
+              {li === 0
+                ? "的拼图中读出核—余核正合列，那么你一定也能从这里直接读出这条上同调长正合列。"
+                : ", you should now be able to find this long exact sequence in cohomology directly in the puzzle as well."}
+            </span>
+          </div>
+        </section>
+      ) : null}
+
+      {mode === "fil" ? (
+        <section className="vakil-module-introduction"
+          aria-label={li === 0 ? "第十一章简介" : "Introduction to chapter eleven"}>
+          <p className="vakil-module-lede">
+            <span className={`vakil-introduction-initial vakil-module-initial${li === 0 ? " is-chinese" : ""}`}>
+              {li === 0 ? "我" : "L"}
+            </span>
+            {li === 0
+              ? "们喘一口气，来看一下一般的滤过在图中是怎样表示的。"
+              : "et us pause for a moment and see how a general filtration is represented in the picture."}
+          </p>
+          <p className="vakil-module-insight">
+            {li === 0
+              ? "在下一页，你会明白为什么我们要这样画这个滤过。"
+              : "On the next page, you will see why we draw the filtration this way."}
+          </p>
+        </section>
+      ) : null}
+
+      {mode === "spec" ? (
+        <section className="vakil-module-introduction"
+          aria-label={li === 0 ? "第十二章简介" : "Introduction to chapter twelve"}>
+          <p className="vakil-module-lede">
+            <span className={`vakil-introduction-initial vakil-module-initial${li === 0 ? " is-chinese" : ""}`}>
+              {li === 0 ? "最" : "A"}
+            </span>
+            {li === 0 ? "后，我们来到这趟旅程的终点：把" : "t last, we reach the final stop of this journey: combining"}
+            <button type="button" className="vakil-module-reference"
+              aria-label={li === 0 ? "前往 11：滤过" : "Go to 11: Filtration"}
+              title={li === 0 ? "11 · 滤过" : "11 · Filtration"}
+              onClick={() => go("fil")}>
+              <span className="vakil-module-reference-number">11</span>
+              <Icon k="fil" s={22} />
+            </button>
+            {li === 0 ? "与" : "with"}
+            <button type="button" className="vakil-module-reference"
+              aria-label={li === 0 ? "前往 08：复形与上同调" : "Go to 08: Complex & cohomology"}
+              title={li === 0 ? "08 · 复形与上同调" : "08 · Complex & cohomology"}
+              onClick={() => go("cx")}>
+              <span className="vakil-module-reference-number">08</span>
+              <Icon k="cx" s={22} />
+            </button>
+            {li === 0 ? "结合起来，画出一个滤过复形。" : "to draw a filtered complex."}
+          </p>
+          <p className="vakil-module-insight vakil-module-insight-clear">
+            {li === 0
+              ? "一个自然的问题是：给定一个滤过复形，怎样读出它在上同调上诱导的滤过？你会发现，这个过程迫使我们进行一系列无法绕开的操作——而这正是谱序列所做的事情。"
+              : "A natural question is: given a filtered complex, how do we read off the induced filtration on its cohomology? The process forces us through a sequence of unavoidable operations—and that is exactly what a spectral sequence does."}
+          </p>
+          <div className="vakil-module-question">
+            <span className="vakil-module-question-label">
+              {li === 0 ? "指标约定" : "Convention"}
+            </span>
+            <span className="vakil-module-question-text">
+              {li === 0
+                ? "这一页需要慢慢消化。我们的指标约定与 Vakil 略有不同；若以带 Hodge 滤过的 de Rham 复形及其 Hodge–de Rham 谱序列为例，这套约定会显得自然。"
+                : "This page may take some time to digest. Our indexing convention differs slightly from Vakil's; with the de Rham complex and its Hodge filtration—and the resulting Hodge–de Rham spectral sequence—in mind, this convention becomes natural."}
+            </span>
+          </div>
+        </section>
+      ) : null}
+
       <div style={{
         display: "flex", width: "100%", maxWidth: contentMaxWidth, gap: 2,
-        marginTop: isSpec ? 0 : "auto",
+        marginTop: isSpec || hasChapterIntroduction ? 0 : "auto",
         flexDirection: isCol ? "column" : "row", alignItems: "center",
       }}>
         {specFolio}
@@ -3386,10 +3974,24 @@ export default function App() {
         width: "100%", maxWidth: contentMaxWidth, marginTop: "auto", paddingTop: 18,
       }}>
         {prevK ? (
-          <button className="tile" onClick={() => go(prevK)} style={keyBtn}><Icon k={prevK} s={36} /></button>
+          <button className="tile vakil-page-nav" type="button"
+            aria-label={`${li === 0 ? "上一页" : "Previous"}: ${t(MODES[prevK].title)}`}
+            onClick={() => go(prevK)} style={keyBtn}>
+            <Icon k={prevK} s={36} />
+            <span className="vakil-page-nav-tooltip" aria-hidden="true">
+              {t(MODES[prevK].title)}
+            </span>
+          </button>
         ) : <div style={{ width: 58 }} />}
         {nextK ? (
-          <button className="tile" onClick={() => go(nextK)} style={keyBtn}><Icon k={nextK} s={36} /></button>
+          <button className="tile vakil-page-nav" type="button"
+            aria-label={`${li === 0 ? "下一页" : "Next"}: ${t(MODES[nextK].title)}`}
+            onClick={() => go(nextK)} style={keyBtn}>
+            <Icon k={nextK} s={36} />
+            <span className="vakil-page-nav-tooltip" aria-hidden="true">
+              {t(MODES[nextK].title)}
+            </span>
+          </button>
         ) : <div style={{ width: 58 }} />}
       </div>
     </div>
