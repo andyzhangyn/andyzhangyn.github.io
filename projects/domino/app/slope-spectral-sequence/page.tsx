@@ -2226,6 +2226,47 @@ export default function SlopeSpectralSequencePage() {
             {language === "en" ? "Enriques surface" : "Enriques 曲面"}
           </button>
         </div>
+        <div className="setup-reference">
+          <span className="setup-reference-label">
+            {language === "en" ? "References" : "参考文献"}
+          </span>
+          <ol className="setup-reference-list">
+            <li>
+              L. Illusie, {" "}
+              <a
+                href="https://numdam.org/articles/10.24033/asens.1374/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <cite>Complexe de de Rham–Witt et cohomologie cristalline</cite>
+              </a>
+              , <cite>Ann. Sci. Éc. Norm. Supér.</cite> (4) 12 (1979), 501–661,
+              Chapter II, §7.3.
+            </li>
+            <li>
+              L. Illusie and M. Raynaud, {" "}
+              <a
+                href="https://numdam.org/articles/10.1007/BF02698774/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <cite>Les suites spectrales associées au complexe de de Rham–Witt</cite>
+              </a>
+              , <cite>Publ. Math. IHÉS</cite> 57 (1983), Chapter II, §3.
+            </li>
+            <li>
+              T. Ekedahl, {" "}
+              <a
+                href="https://doi.org/10.1007/BF02384380"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <cite>On the multiplicative properties of the de Rham–Witt complex. I</cite>
+              </a>
+              , <cite>Ark. Mat.</cite> 22 (1984), 185–239.
+            </li>
+          </ol>
+        </div>
       </section>
 
       <div className="slope-workspace">

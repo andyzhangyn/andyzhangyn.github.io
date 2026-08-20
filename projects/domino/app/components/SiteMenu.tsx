@@ -8,20 +8,16 @@ export default function SiteMenu({
   active: MenuPage;
   language: MenuLanguage;
 }) {
-  const dominoHref = active === "domino" ? "./index.html" : "../index.html";
-  const slopeHref = active === "domino"
-    ? "./slope-spectral-sequence/index.html"
-    : "./index.html";
   const items = [
     {
       id: "domino" as const,
-      href: dominoHref,
+      href: "/visualizations/what-is-a-domino/",
       index: "01",
       label: language === "en" ? "What is a domino?" : "什么是多米诺？",
     },
     {
       id: "slope" as const,
-      href: slopeHref,
+      href: "/visualizations/slope-spectral-sequence/",
       index: "02",
       label: language === "en" ? "Slope Spectral Sequence" : "斜率谱序列",
     },
@@ -36,6 +32,7 @@ export default function SiteMenu({
         <a
           className={`site-menu-link${active === item.id ? " is-active" : ""}`}
           href={item.href}
+          target="_top"
           aria-current={active === item.id ? "page" : undefined}
           key={item.id}
         >

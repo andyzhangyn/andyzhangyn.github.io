@@ -1183,6 +1183,33 @@ function RaynaudSetup({ language }: { language: Language }) {
           {" "}<Latex formula="k" /> 上的 Witt 向量环。下标 <Latex formula={"\\sigma"} />
           {" "}表示 Frobenius 半线性条件；在本可视化中我们略去这些条件。
         </p>
+        <div className="setup-reference">
+          <span className="setup-reference-label">参考文献</span>
+          <ol className="setup-reference-list">
+            <li>
+              L. Illusie and M. Raynaud, {" "}
+              <a
+                href="https://numdam.org/articles/10.1007/BF02698774/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <cite>Les suites spectrales associées au complexe de de Rham–Witt</cite>
+              </a>
+              , <cite>Publ. Math. IHÉS</cite> 57 (1983), Chapter I, §2.D.
+            </li>
+            <li>
+              Y. Zhang, {" "}
+              <a
+                href="https://arxiv.org/abs/2607.26323"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <cite>Higher dimensional dominoes in de Rham–Witt cohomology</cite>
+              </a>
+              , arXiv:2607.26323 (2026), §§2.2–3.
+            </li>
+          </ol>
+        </div>
       </>
     );
   }
@@ -1201,6 +1228,33 @@ function RaynaudSetup({ language }: { language: Language }) {
         {" "}<Latex formula={"\\sigma"} /> denotes the Frobenius
         {" "}semilinearity conditions, which we suppress for this visualization project.
       </p>
+      <div className="setup-reference">
+        <span className="setup-reference-label">References</span>
+        <ol className="setup-reference-list">
+          <li>
+            L. Illusie and M. Raynaud, {" "}
+            <a
+              href="https://numdam.org/articles/10.1007/BF02698774/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <cite>Les suites spectrales associées au complexe de de Rham–Witt</cite>
+            </a>
+            , <cite>Publ. Math. IHÉS</cite> 57 (1983), Chapter I, §2.D.
+          </li>
+          <li>
+            Y. Zhang, {" "}
+            <a
+              href="https://arxiv.org/abs/2607.26323"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <cite>Higher dimensional dominoes in de Rham–Witt cohomology</cite>
+            </a>
+            , arXiv:2607.26323 (2026), §§2.2–3.
+          </li>
+        </ol>
+      </div>
     </>
   );
 }

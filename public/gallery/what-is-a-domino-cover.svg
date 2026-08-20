@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 620" role="img" aria-labelledby="title description">
+  <title id="title">A domino between two Raynaud-ring lattices</title>
+  <desc id="description">The degree-zero sector from zero to 135 degrees and the degree-one upper half-plane, joined by a differential.</desc>
+  <defs>
+    <marker id="arrow-dark" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#27383f"/>
+    </marker>
+    <marker id="arrow-source" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#c54a2e"/>
+    </marker>
+    <marker id="arrow-target" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#3f7095"/>
+    </marker>
+    <filter id="paper-grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.78" numOctaves="3" seed="17" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0" result="grey-noise"/>
+      <feComponentTransfer in="grey-noise" result="soft-noise">
+        <feFuncA type="table" tableValues="0 0.035"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="soft-noise" mode="multiply"/>
+    </filter>
+  </defs>
+
+  <rect width="620" height="620" fill="#faf8f3"/>
+  <g filter="url(#paper-grain)">
+    <g fill="#202729">
+      <circle cx="82" cy="222" r="5"/><circle cx="124" cy="222" r="5"/><circle cx="166" cy="222" r="5"/><circle cx="208" cy="222" r="5"/><circle cx="250" cy="222" r="5"/>
+      <circle cx="124" cy="264" r="5"/><circle cx="166" cy="264" r="5"/><circle cx="208" cy="264" r="5"/><circle cx="250" cy="264" r="5"/>
+      <circle cx="208" cy="306" r="5"/><circle cx="250" cy="306" r="5"/>
+
+      <circle cx="370" cy="222" r="5"/><circle cx="412" cy="222" r="5"/><circle cx="454" cy="222" r="5"/><circle cx="496" cy="222" r="5"/><circle cx="538" cy="222" r="5"/>
+      <circle cx="370" cy="264" r="5"/><circle cx="412" cy="264" r="5"/><circle cx="454" cy="264" r="5"/><circle cx="496" cy="264" r="5"/><circle cx="538" cy="264" r="5"/>
+      <circle cx="370" cy="306" r="5"/><circle cx="412" cy="306" r="5"/><circle cx="496" cy="306" r="5"/><circle cx="538" cy="306" r="5"/>
+    </g>
+
+    <path d="M 279 306 H 339" fill="none" stroke="#27383f" stroke-width="2.6" marker-end="url(#arrow-dark)"/>
+
+    <g fill="none" stroke="#c54a2e" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow-source)">
+      <path d="M 166 306 H 225"/>
+      <path d="M 166 306 L 123 263"/>
+    </g>
+    <g fill="none" stroke="#3f7095" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow-target)">
+      <path d="M 454 306 H 513"/>
+      <path d="M 454 306 L 411 263"/>
+    </g>
+
+    <circle cx="166" cy="306" r="11" fill="#c54a2e" stroke="#faf8f3" stroke-width="4"/>
+    <circle cx="454" cy="306" r="11" fill="#3f7095" stroke="#faf8f3" stroke-width="4"/>
+
+    <path d="M 58 432 H 274" fill="none" stroke="#c54a2e" stroke-opacity="0.18" stroke-width="1.5"/>
+    <path d="M 346 432 H 562" fill="none" stroke="#3f7095" stroke-opacity="0.18" stroke-width="1.5"/>
+  </g>
+</svg>

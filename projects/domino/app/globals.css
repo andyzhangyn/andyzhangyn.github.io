@@ -196,6 +196,53 @@ html.is-embedded .page-shell {
   margin: 0;
 }
 
+.setup-reference {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.setup-reference-label {
+  display: block;
+  color: var(--ink);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.setup-reference-list {
+  margin: 5px 0 0;
+  padding-left: 1.4rem;
+}
+
+.setup-reference-list li {
+  padding-left: 0.16rem;
+}
+
+.setup-reference-list li + li {
+  margin-top: 3px;
+}
+
+.setup-reference a {
+  color: var(--blue-deep);
+  font-weight: 500;
+  text-decoration-line: underline;
+  text-decoration-color: rgba(65, 111, 145, 0.58);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition:
+    color 140ms ease,
+    text-decoration-color 140ms ease;
+}
+
+.setup-reference a:hover {
+  color: #285a7e;
+  text-decoration-color: currentColor;
+}
+
 .definition-display {
   display: block;
   margin: 7px 0 8px;
@@ -1623,6 +1670,10 @@ html.is-embedded .page-shell {
 
 .slope-introduction p {
   margin: 0;
+}
+
+.slope-introduction .setup-reference {
+  margin-top: 20px;
 }
 
 .slope-example-switcher {

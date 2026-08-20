@@ -42,11 +42,11 @@ export default function VisualizationsPage() {
                   <div className="gallery-artwork">
                     <Image
                       className="gallery-artwork-image"
-                      src="/gallery/what-is-a-domino-cover.png"
-                      alt="Nested lattice diagrams with colored circular subquotients"
-                      width={610}
+                      src="/gallery/what-is-a-domino-cover.svg"
+                      alt="Two Raynaud-ring lattices joined by a differential"
+                      width={620}
                       height={620}
-                      sizes="(max-width: 680px) calc(100vw - 70px), 460px"
+                      sizes="(max-width: 680px) calc(100vw - 70px), 400px"
                       priority
                     />
                   </div>
@@ -67,6 +67,40 @@ export default function VisualizationsPage() {
               >
                 <span aria-hidden="true">01</span>
                 <h2>What is a domino?</h2>
+              </Link>
+            </article>
+
+            <article className="gallery-work gallery-work-slope">
+              <div className="gallery-frame">
+                <div className="gallery-frame-mat">
+                  <div className="gallery-artwork">
+                    <Image
+                      className="gallery-artwork-image"
+                      src="/gallery/what-is-a-domino-cover.png"
+                      alt="Slope spectral sequence parts arranged in a square diagram"
+                      width={610}
+                      height={620}
+                      sizes="(max-width: 680px) calc(100vw - 70px), 470px"
+                      priority
+                    />
+                  </div>
+                </div>
+                <Link
+                  className="gallery-frame-link"
+                  href="/visualizations/slope-spectral-sequence/"
+                  aria-label="Open Slope Spectral Sequence"
+                >
+                  <span className="gallery-frame-enter" aria-hidden="true">
+                    ↗
+                  </span>
+                </Link>
+              </div>
+              <Link
+                className="gallery-plaque"
+                href="/visualizations/slope-spectral-sequence/"
+              >
+                <span aria-hidden="true">02</span>
+                <h2>Slope Spectral Sequence</h2>
               </Link>
             </article>
 
@@ -98,7 +132,7 @@ export default function VisualizationsPage() {
                 className="gallery-plaque"
                 href="/visualizations/vakil-picturebook/"
               >
-                <span aria-hidden="true">02</span>
+                <span aria-hidden="true">03</span>
                 <h2>Vakil&apos;s Picturebook</h2>
               </Link>
             </article>
