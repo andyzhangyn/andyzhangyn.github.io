@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description:
     "Yuanning Zhang is a Ph.D. student in mathematics at Northwestern University.",
   authors: [{ name: "Yuanning Zhang" }],
+  verification: {
+    google: "9A3-MDlRQs25sucj3UtJMnVcGP9oQYMriObFPv5Qz_4",
+  },
   alternates: {
     canonical: "/",
   },
