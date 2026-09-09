@@ -34,6 +34,7 @@ export default function HabiroWorkshopPage() {
           </header>
           <div className="prose-page-body">
             <p>Speakers and individual talk times to be announced.</p>
+            <p>We thank <a href="https://tessbouis.com/">Tess Bouis</a> for suggesting ideas for the individual talk topics.</p>
           </div>
           <section aria-labelledby="programme-heading">
             <div className="slmath-schedule-heading">
