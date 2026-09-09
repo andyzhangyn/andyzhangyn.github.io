@@ -17,10 +17,10 @@ export const profile = {
     url: "https://antieau.github.io/",
   },
   portrait: {
-    src: "/profile-photo.jpg",
-    width: 1050,
-    height: 1470,
-    alt: "Yuanning Zhang browsing a shop display while holding a coffee",
+    src: "/profile-photo-outdoors.jpg",
+    width: 1093,
+    height: 1738,
+    alt: "Yuanning Zhang outdoors with a camera strap",
   },
 
   introduction:
@@ -44,6 +44,20 @@ export const profile = {
   },
 
   writing: [
+    {
+      year: "2026",
+      authors: "Y. Zhang",
+      title: "The stacky approach to de Rham-Witt cohomology",
+      status: "In preparation.",
+      links: [],
+    },
+    {
+      year: "2026",
+      authors: "Y. Zhang",
+      title: "Harder-Narasimhan filtration of torsion F-gauges",
+      status: "In preparation.",
+      links: [],
+    },
     {
       year: "2026",
       authors: "Y. Zhang",

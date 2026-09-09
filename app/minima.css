@@ -232,8 +232,10 @@ label:focus-visible {
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 60%;
   border: 1px solid var(--grey-color-light);
-  filter: saturate(0.84);
 }
 
 .contact-list {
@@ -908,11 +910,10 @@ label:focus-visible {
   overflow: hidden;
   border-bottom: 1px solid rgba(75, 81, 82, 0.14);
   background:
-    radial-gradient(ellipse at 46% -4%, rgba(255, 253, 247, 0.72), transparent 43%),
-    radial-gradient(ellipse at 82% 26%, rgba(164, 132, 96, 0.09), transparent 38%),
-    radial-gradient(ellipse at 14% 68%, rgba(255, 251, 243, 0.38), transparent 42%),
-    linear-gradient(124deg, rgba(128, 101, 72, 0.045), transparent 27%, rgba(255, 255, 255, 0.14) 61%, transparent 84%),
-    linear-gradient(180deg, #eee7dc 0%, #e5dbcc 100%);
+    linear-gradient(116deg, transparent 18%, rgba(255, 253, 244, .25) 20%, rgba(255, 253, 244, .08) 51%, transparent 54%),
+    radial-gradient(ellipse at 98% 58%, rgba(102, 140, 144, .13), transparent 55%),
+    radial-gradient(ellipse at 0% 95%, rgba(175, 131, 94, .08), transparent 46%),
+    linear-gradient(180deg, #ebe7dc, #e8e3d7);
   isolation: isolate;
 }
 
@@ -926,21 +927,6 @@ label:focus-visible {
   mix-blend-mode: multiply;
   opacity: 0.1;
   pointer-events: none;
-}
-
-.gallery-exhibition::after {
-  position: absolute;
-  inset: -8%;
-  z-index: -1;
-  background:
-    radial-gradient(ellipse 45% 9% at 16% 31%, rgba(255, 255, 255, 0.16), transparent 72%),
-    radial-gradient(ellipse 38% 8% at 76% 16%, rgba(126, 99, 69, 0.055), transparent 74%),
-    radial-gradient(ellipse 50% 10% at 60% 58%, rgba(255, 255, 255, 0.12), transparent 70%),
-    radial-gradient(ellipse 40% 8% at 27% 85%, rgba(129, 101, 71, 0.045), transparent 72%);
-  content: "";
-  filter: blur(1.2px);
-  pointer-events: none;
-  transform: rotate(-2deg);
 }
 
 .gallery-exhibition-inner {
@@ -1026,26 +1012,35 @@ label:focus-visible {
   position: relative;
   isolation: isolate;
   padding: 4px;
-  border: 1px solid rgba(21, 29, 30, 0.72);
-  background: #293436;
+  border: 1px solid #283937;
+  background: linear-gradient(135deg, #53605a, #303f3d 45%, #46534c);
   box-shadow:
-    1px 1px 0 rgba(255, 255, 255, 0.14) inset,
-    -1px -1px 0 rgba(12, 18, 19, 0.24) inset,
-    2px 3px 2px rgba(31, 35, 35, 0.13),
-    11px 15px 28px rgba(43, 42, 38, 0.15);
-  transition:
-    box-shadow 220ms ease,
-    transform 220ms ease;
+    1px 1px 0 rgba(255, 255, 255, .25) inset,
+    -1px -1px 0 rgba(12, 18, 19, .22) inset,
+    2px 3px 2px rgba(31, 35, 35, .12),
+    10px 17px 22px -7px rgba(55, 78, 83, .21),
+    21px 29px 40px -18px rgba(73, 84, 86, .15);
+  transition: box-shadow 220ms ease;
+}
+
+.gallery-work-slope .gallery-frame {
+  border-color: #3f4949;
+  background: linear-gradient(135deg, #a4aaa2, #667571 26%, #434f4b 72%, #91998e);
+}
+
+.gallery-work-vakil .gallery-frame {
+  border-color: #494039;
+  background: linear-gradient(135deg, #786750, #51483d 40%, #665846);
 }
 
 .gallery-work .gallery-frame:hover,
 .gallery-work .gallery-frame:focus-within {
   box-shadow:
-    1px 1px 0 rgba(255, 255, 255, 0.16) inset,
-    -1px -1px 0 rgba(12, 18, 19, 0.25) inset,
-    3px 4px 3px rgba(31, 35, 35, 0.14),
-    13px 19px 34px rgba(43, 42, 38, 0.17);
-  transform: translateY(-3px);
+    1px 1px 0 rgba(255, 255, 255, .25) inset,
+    -1px -1px 0 rgba(12, 18, 19, .22) inset,
+    2px 3px 2px rgba(31, 35, 35, .12),
+    10px 17px 22px -7px rgba(55, 78, 83, .26),
+    21px 29px 40px -18px rgba(73, 84, 86, .18);
 }
 
 .gallery-frame-mat {
@@ -1210,7 +1205,7 @@ label:focus-visible {
   margin: 16px auto 0;
   padding: 10px 12px 9px;
   border: 0;
-  background: rgba(250, 249, 246, 0.9);
+  background: rgba(248, 246, 237, 0.88);
   box-shadow:
     inset 0 0 0 1px rgba(63, 72, 74, 0.13),
     0 2px 7px rgba(46, 50, 49, 0.055);
@@ -1250,7 +1245,7 @@ label:focus-visible {
 }
 
 .gallery-plaque-static:hover {
-  background: rgba(250, 249, 246, 0.9);
+  background: rgba(248, 246, 237, 0.88);
   color: #243946;
   transform: none;
 }
@@ -1705,7 +1700,7 @@ label:focus-visible {
 
   .portrait-wrap {
     float: none;
-    width: min(100%, 360px);
+    width: min(100%, 280px);
     margin: 0 auto 25px;
   }
 
