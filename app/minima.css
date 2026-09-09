@@ -1308,6 +1308,221 @@ label:focus-visible {
   margin-bottom: 0;
 }
 
+.seminar-event {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 28px;
+  padding: 26px 0;
+}
+
+.seminar-event + .seminar-event {
+  border-top: 1px solid var(--grey-color-light);
+}
+
+.seminar-event-date {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--grey-color);
+  font-size: 14px;
+}
+
+.seminar-event-kind {
+  margin-bottom: 8px;
+  color: var(--grey-color);
+  font-size: 13px;
+}
+
+.seminar-event h2 {
+  color: var(--brand-color-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+.seminar-event p:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 680px) {
+  .seminar-event {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Plain academic seminar pages. */
+.slmath-page { padding-bottom: 60px; }
+.slmath-page .content-page-wrapper { max-width: 900px; }
+.slmath-back { font-size: 14px; margin-bottom: 25px; }
+.slmath-page .content-page-header { padding-bottom: 18px; margin-bottom: 22px; }
+.slmath-page .content-page-header h1 {
+  color: var(--text-color);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  line-height: 1.25;
+  letter-spacing: normal;
+  margin-bottom: 12px;
+}
+.slmath-page .content-page-header .slmath-eyebrow,
+.slmath-page .content-page-header .slmath-intro {
+  color: var(--grey-color);
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.slmath-schedule-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-top: 28px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--grey-color-light);
+}
+.slmath-schedule-heading h2 { margin: 0; font-size: 21px; font-family: Georgia, serif; }
+.slmath-schedule-heading > span { font-size: 13px; color: var(--grey-color); }
+.slmath-page .seminar-event { grid-template-columns: 160px minmax(0, 1fr); gap: 24px; padding: 24px 0; }
+.slmath-page .seminar-event-date { font-size: 14px; color: var(--text-color); }
+.slmath-page .seminar-event-kind { font-size: 13px; margin-bottom: 7px; }
+.slmath-page .seminar-event h2 { color: var(--text-color); font-family: Georgia, serif; font-size: 21px; line-height: 1.4; margin-bottom: 8px; }
+.slmath-speaker { font-weight: 600; }
+.slmath-notice { font-size: 14px; font-style: italic; }
+.slmath-abstract { font-size: 15px; line-height: 1.65; }
+.slmath-workshop-link { display: inline-block; margin-top: 3px; text-decoration: underline; font-size: 14px; }
+@media screen and (max-width: 680px) {
+  .slmath-page .seminar-event { grid-template-columns: 1fr; gap: 10px; }
+  .slmath-page .content-page-header h1 { font-size: 27px; }
+}
+
+.slmath-page .workshop-programme .seminar-event {
+  grid-template-columns: 85px minmax(0, 1fr) 90px;
+}
+.workshop-speaker { font-size: 14px; }
+.workshop-speaker span { display: block; }
+.workshop-speaker span:first-child { color: var(--grey-color); margin-bottom: 6px; }
+@media screen and (max-width: 680px) {
+  .slmath-page .workshop-programme .seminar-event { grid-template-columns: 1fr; }
+  .workshop-speaker { display: flex; gap: 8px; }
+}
+
+.slmath-page { background: white; color: #37352f; line-height: 1.65; }
+.slmath-page .content-page-header { border-bottom: 0; }
+.slmath-page .content-page-header h1 { font-family: inherit; font-weight: 650; font-size: 32px; }
+.slmath-page .slmath-schedule-heading { border: 0; }
+.slmath-page .slmath-schedule-heading h2,
+.academic-section-title { font-family: inherit; font-size: 20px; font-weight: 600; margin-top: 30px; margin-bottom: 16px; }
+.academic-table-scroll { overflow-x: auto; margin: 16px 0 28px; }
+.academic-table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.6; }
+.academic-table th,
+.academic-table td { border: 1px solid #e4e4e2; padding: 11px 13px; text-align: left; vertical-align: top; }
+.academic-table thead th { background: #fafafa; font-weight: 500; }
+.academic-table tbody th { font-weight: 400; min-width: 80px; }
+.academic-table td:last-child { min-width: 110px; }
+.academic-table p { margin: 8px 0 0; }
+.academic-table a { text-decoration: underline; text-underline-offset: 3px; }
+.academic-note { color: #787774; font-size: 13px; }
+@media screen and (max-width: 680px) {
+  .slmath-page .content-page-header h1 { font-size: 27px; }
+  .academic-table { min-width: 560px; }
+}
+
+.slmath-page .slmath-banner {
+  position: relative;
+  overflow: hidden;
+  padding: 38px 36px 30px;
+  margin: 0 0 30px;
+  border-top: 3px solid #536c7b;
+  background: #edf1f3;
+}
+.slmath-banner::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -140px;
+  top: -90px;
+  border: 1px solid #ccd6dd;
+  border-radius: 50%;
+  box-shadow: 0 0 0 28px #edf1f3, 0 0 0 29px #d8e0e5,
+    0 0 0 57px #edf1f3, 0 0 0 58px #e0e6ea;
+  pointer-events: none;
+}
+.slmath-page .slmath-banner > * { position: relative; z-index: 1; }
+.slmath-page .slmath-banner h1 {
+  max-width: 650px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(32px, 4.4vw, 44px);
+  line-height: 1.2;
+  color: #223d4c;
+  margin: 14px 0 20px;
+}
+.slmath-page .slmath-banner .slmath-eyebrow { color: #4e6675; font-size: 14px; }
+.slmath-page .slmath-banner .slmath-intro { color: #455a66; margin-bottom: 0; }
+@media screen and (max-width: 680px) {
+  .slmath-page .slmath-banner { padding: 28px 22px; }
+}
+
+.slmath-page .habiro-art-banner {
+  padding: 0;
+  border: 1px solid #e3ded2;
+  background: #faf7ef;
+}
+.habiro-art-banner::after { display: none; }
+.habiro-banner-art { display: block; width: 100%; height: auto; }
+.habiro-banner-copy { padding: 25px 32px 28px; border-top: 1px solid #e3ded2; }
+.slmath-page .habiro-art-banner h1 { max-width: none; font-size: clamp(29px, 4vw, 39px); margin: 10px 0 16px; }
+.slmath-page .habiro-art-banner .slmath-intro { margin-bottom: 0; }
+@media screen and (max-width: 680px) {
+  .habiro-banner-copy { padding: 20px; }
+}
+
+.habiro-math-banner { margin: 0; padding: 28px 30px 20px; background: #f7f4e9; color: #304d44; }
+.habiro-math-definition { text-align: center; padding-bottom: 16px; border-bottom: 1px solid #d8d6c7; }
+.habiro-math-label { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #776b52; }
+.habiro-formula .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; padding: 3px 0; }
+.habiro-math-definition .habiro-formula:first-of-type { font-size: 22px; }
+.habiro-math-lower { display: grid; grid-template-columns: 42% 58%; align-items: center; padding-top: 10px; }
+.habiro-root-picture svg { display: block; width: 100%; }
+.habiro-root-picture .habiro-formula { font-size: 11px; }
+.habiro-math-maps { padding-left: 18px; font-size: 14px; }
+.habiro-math-maps > div + div { margin-top: 24px; }
+.habiro-math-maps p { font-size: 12px; text-align: center; margin: 8px 0 0; color: #6c7265; }
+@media screen and (max-width: 680px) {
+  .habiro-math-banner { padding: 22px 16px; }
+  .habiro-math-lower { grid-template-columns: 1fr; }
+  .habiro-root-picture { max-width: 270px; margin: auto; }
+  .habiro-math-maps { padding: 20px 0 0; }
+  .habiro-math-definition .habiro-formula:first-of-type { font-size: 18px; }
+}
+
+.habiro-frieze { position: relative; margin: 0; container-type: inline-size; }
+.habiro-frieze-painting { display: block; width: 100%; height: auto; }
+.habiro-frieze-inlay { position: absolute; inset: 0; width: 100%; height: 100%; }
+.habiro-frieze-definition {
+  position: absolute;
+  left: 33%; top: 25%; width: 39%;
+  text-align: center; color: #354b52;
+  font-size: clamp(10px, 2.25cqw, 22px);
+}
+.habiro-frieze-definition .katex-display { margin: .65em 0; }
+.habiro-frieze-definition > div + div { font-size: .8em; }
+.slmath-page .habiro-art-banner .habiro-banner-copy { padding: 18px 28px 20px; }
+.slmath-page .habiro-art-banner h1 { font-size: clamp(27px, 3.5vw, 34px); margin: 8px 0 10px; }
+@media screen and (max-width: 500px) {
+  .habiro-frieze-definition { font-size: 2.25cqw; }
+  .slmath-page .habiro-art-banner .habiro-banner-copy { padding: 16px 20px; }
+}
+
+.workshop-topics { margin: 10px 0 15px 18px; }
+.workshop-topics li + li { margin-top: 7px; }
+.academic-table .workshop-reference-label { font-size: 12px; font-weight: 600; margin-top: 16px; color: #66706a; }
+.workshop-references { margin: 5px 0 0 16px; font-size: 12px; }
+.workshop-references li + li { margin-top: 5px; }
+.workshop-reference-prose { font-size: 12px; }
+.habiro-banner-subtitle { font-family: Georgia, "Times New Roman", serif; font-size: 19px; color: #53646b; margin: 0 0 16px; }
+.academic-table .workshop-reference-prose p { margin: 5px 0 0; }
+
 /* A compact bibliography grouped by year. */
 .bibliography-groups {
   margin: 0;
@@ -1726,3 +1941,28 @@ label:focus-visible {
     break-inside: avoid;
   }
 }
+
+/* Collapsible workshop bibliography. */
+.workshop-bibliography { margin-top: 36px; border-top: 1px solid #cbd4d4; }
+.workshop-bibliography > summary {
+  display: flex; align-items: center; justify-content: flex-start;
+  gap: 16px; padding: 20px 0; cursor: pointer; list-style: none;
+}
+.workshop-bibliography > summary::-webkit-details-marker { display: none; }
+.workshop-bibliography > summary h2 { margin: 0; font-family: Georgia, serif; font-size: 24px; }
+.workshop-bibliography > summary:focus-visible { outline: 2px solid #536d79; outline-offset: 4px; }
+.bibliography-toggle { font-size: 14px; color: #53646b; }
+.bibliography-show::after { content: " +"; }
+.bibliography-hide::after { content: " −"; }
+.bibliography-hide, .workshop-bibliography[open] .bibliography-show { display: none; }
+.workshop-bibliography[open] .bibliography-hide { display: inline; }
+.bibliography-groups { display: grid; gap: 24px; padding-bottom: 12px; }
+.bibliography-group { border: 1px solid #dce2e1; }
+.bibliography-group h3 {
+  margin: 0; padding: 14px 20px; border-left: 3px solid #6b858d;
+  background: #edf2f1; color: #354c59; font-family: Georgia, serif;
+  font-size: 19px; line-height: 1.4;
+}
+.bibliography-entries { padding: 8px 20px; }
+.bibliography-entries p { margin: 0; padding: 12px 0; font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }
+.bibliography-entries p + p { border-top: 1px solid #edf0ee; }

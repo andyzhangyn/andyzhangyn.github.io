@@ -29,6 +29,7 @@ export const profile = {
   navigation: [
     { label: "research", href: "/research/" },
     { label: "reading", href: "/de-rham-witt/" },
+    { label: "seminar", href: "/seminar/" },
     { label: "gallery", href: "/visualizations/" },
   ],
 
