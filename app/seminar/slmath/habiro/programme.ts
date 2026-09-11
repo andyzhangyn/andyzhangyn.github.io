@@ -1,6 +1,8 @@
 export const programme = [
   {
     title: "Overview",
+    speaker: "Yuanning Zhang",
+    speakerUrl: "/",
     description: "This talk introduces the two starting points of the workshop: deforming de Rham cohomology and assembling quantum invariants at roots of unity. Simple examples of the q-derivative and of evaluation in the Habiro ring illustrate the roles of q = 1 and roots of unity. We then outline how the arithmetic and topological perspectives meet in the study of Habiro cohomology.",
     references: [
       { author: "Scholze", title: "Canonical q-deformations in arithmetic geometry", url: "https://arxiv.org/abs/1606.01796" },
@@ -9,6 +11,8 @@ export const programme = [
   },
   {
     title: "q-de Rham cohomology and prismatic cohomology",
+    speaker: "Kai Shaikh",
+    speakerUrl: "https://kaishaikh.github.io/",
     description: "Beginning with the q-de Rham complex of a polynomial algebra, we explain Scholze’s proposed canonical q-deformation and why independence of coordinates is a substantive problem. Specialization at q = 1 and at p-th roots of unity provides a first view of its cohomological meaning. We introduce the prismatic perspective and explain how it resolves coordinate independence in the p-complete setting, distinguishing this from the global theory.",
     references: [
       { author: "Scholze", title: "Canonical q-deformations in arithmetic geometry", url: "https://arxiv.org/abs/1606.01796" },
@@ -17,6 +21,7 @@ export const programme = [
   },
   {
     title: "From WRT invariants to the Habiro ring",
+    speaker: "Tudor-Ioan Caba",
     description: "Starting from knots and their colored Jones polynomials, we explain how surgery on framed links leads to Witten–Reshetikhin–Turaev invariants of 3-manifolds. For integral homology 3-spheres, Habiro assembles the invariants at roots of unity into a single element of the Habiro ring. We introduce this cyclotomic completion and its basic properties, explaining how evaluation at roots of unity and Taylor expansion connect quantum invariants with arithmetic.",
     references: [
       { author: "Habiro", title: "Cyclotomic completions of polynomial rings", url: "https://arxiv.org/abs/math/0209324" },
@@ -41,6 +46,7 @@ export const programme = [
   },
   {
     title: "Habiro cohomology and its relationship with THH",
+    speaker: "Sin Hang Jason Yeung",
     description: "We first introduce Wagner’s construction of algebraic Habiro cohomology: a suitable q-Hodge filtration produces a q-Hodge complex that descends to the Habiro ring. Building on Talk 5, we then explain how THH over connective complex K-theory ku supplies such filtrations under appropriate hypotheses, and how equivariant structures give a homotopy-theoretic description of Habiro descent. The number-field case recovers the Habiro rings from Talk 4 and brings the arithmetic and topological perspectives together.",
     references: [
       { author: "Wagner", title: "q-Hodge complexes over the Habiro ring", url: "https://arxiv.org/abs/2510.04782" },
