@@ -7,7 +7,7 @@ import { BibliographyDisclosure } from "./bibliography-disclosure";
 
 export const metadata: Metadata = {
   title: "q-de Rham cohomology and Habiro rings",
-  description: "SLMath mini workshop, September 21–25, 2026.",
+  description: "SLMath mini workshop, September 23–25, 2026, 10–11 am and 1–2 pm each day.",
   alternates: { canonical: "/seminar/slmath/habiro/" },
 };
 
@@ -27,13 +27,13 @@ export default function HabiroWorkshopPage() {
             <h1>q-de Rham cohomology and Habiro rings</h1>
             <p className="habiro-banner-subtitle"><em>Arithmetic geometry meets quantum topology</em></p>
             <p className="slmath-intro">
-              <time dateTime="2026-09-21">September 21</time>–<time dateTime="2026-09-25">25, 2026</time>
-              {" · Monday–Friday · Eisenbud Auditorium, SLMath"}
+              <time dateTime="2026-09-23">September 23</time>–<time dateTime="2026-09-25">25, 2026</time>
+              {" · Wednesday–Friday · 10–11 am & 1–2 pm each day · Eisenbud Auditorium, SLMath"}
             </p>
             </div>
           </header>
           <div className="prose-page-body">
-            <p>Remaining speakers and individual talk times to be announced.</p>
+            <p>Remaining speakers to be announced.</p>
             <p>We thank <a href="https://tessbouis.com/">Tess Bouis</a> for suggesting ideas for the individual talk topics.</p>
           </div>
           <section aria-labelledby="programme-heading">
@@ -42,10 +42,17 @@ export default function HabiroWorkshopPage() {
             </div>
             <div className="academic-table-scroll" role="region" aria-label="Workshop programme" tabIndex={0}>
               <table className="academic-table">
-                <thead><tr><th scope="col">Talk</th><th scope="col">Topic</th><th scope="col">Speaker</th></tr></thead>
+                <thead><tr><th scope="col">Time</th><th scope="col">Talk</th><th scope="col">Topic</th><th scope="col">Speaker</th></tr></thead>
                 <tbody>
                   {programme.map((talk, index) => (
                     <tr key={talk.title}>
+                      <td style={{ whiteSpace: "nowrap" }}>
+                        <time dateTime={`2026-09-${23 + Math.floor(index / 2)}`}>
+                          {["Wed, Sep 23", "Thu, Sep 24", "Fri, Sep 25"][Math.floor(index / 2)]}
+                        </time>
+                        <br />
+                        {index % 2 === 0 ? "10–11 am" : "1–2 pm"}
+                      </td>
                       <th scope="row">Talk {index + 1}</th>
                       <td>
                         <strong>{talk.title}</strong>

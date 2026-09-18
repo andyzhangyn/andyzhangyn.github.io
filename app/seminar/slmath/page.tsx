@@ -59,8 +59,9 @@ export default function SLMathSeminarPage() {
             </article>
             <article className="seminar-event" aria-labelledby="workshop-title">
               <div className="seminar-event-date">
-                <span><time dateTime="2026-09-21">September 21</time>–<time dateTime="2026-09-25">25</time></span>
-                <span>Monday–Friday</span>
+                <span><time dateTime="2026-09-23">September 23</time>–<time dateTime="2026-09-25">25</time></span>
+                <span>Wednesday–Friday</span>
+                <span>10–11 am &amp; 1–2 pm</span>
               </div>
               <div>
                 <p className="seminar-event-kind">Mini Workshop</p>
