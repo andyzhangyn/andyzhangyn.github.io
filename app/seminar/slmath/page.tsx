@@ -53,7 +53,7 @@ export default function SLMathSeminarPage() {
                 <span>10–11 am</span>
               </div>
               <div>
-                <h2 id="sept-18-title">Topic TBA</h2>
+                <h2 id="sept-18-title">Higher 𝔸<sup>1</sup>-coverings</h2>
                 <p className="slmath-speaker">Marco Giustetto</p>
               </div>
             </article>

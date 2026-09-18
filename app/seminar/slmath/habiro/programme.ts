@@ -38,6 +38,8 @@ export const programme = [
   },
   {
     title: "THH and the motivic/even filtrations",
+    speaker: "Giacomo Bertizzolo",
+    speakerUrl: "https://gbertizzolo.github.io/",
     description: "This talk introduces topological Hochschild homology and explains how filtrations on topological invariants give rise to arithmetic cohomology theories. We discuss the motivic filtration of Bhatt–Morrow–Scholze and the even filtration of Hahn–Raksit–Wilson, emphasizing their purpose and their relationship in the relevant settings. The aim is to prepare the objects and ideas needed for the final talk, rather than to develop the full machinery.",
     references: [
       { author: "Bhatt–Morrow–Scholze", title: "Topological Hochschild homology and integral p-adic Hodge theory", url: "https://arxiv.org/abs/1802.03261" },
