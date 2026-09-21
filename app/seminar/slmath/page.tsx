@@ -55,6 +55,17 @@ export default function SLMathSeminarPage() {
               <div>
                 <h2 id="sept-18-title">Higher 𝔸<sup>1</sup>-coverings</h2>
                 <p className="slmath-speaker">Marco Giustetto</p>
+                <p className="slmath-abstract" id="marco-abstract">
+                  <strong>Abstract.</strong> We will give a (very) quick overview of
+                  Morel&apos;s theory of 𝔸<sup>1</sup>-coverings and discuss some of
+                  its applications — for instance, motivic knots. We will then
+                  introduce 𝔸<sup>1</sup>-<i>n</i>-coverings, present a classification
+                  theorem for them — analogous to the topological classification
+                  of coverings — and give a variety of examples. Finally, we will
+                  answer a question of Morel on a geometric criterion for
+                  recognizing 𝔸<sup>1</sup>-coverings between schemes over a field.
+                  This is based on joint work with Thor Wittich.
+                </p>
               </div>
             </article>
             <article className="seminar-event" aria-labelledby="workshop-title">
