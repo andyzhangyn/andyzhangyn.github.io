@@ -93,6 +93,7 @@ export const profile = {
     {
       date: "Fall 2026",
       dateTime: "2026",
+      sortDate: "2026-09-01",
       title: "SLMath graduate student seminar",
       description:
         "A graduate student seminar and mini workshops that I co-organize with Erika Beserra at SLMath in Fall 2026.",

@@ -14,6 +14,13 @@ export const metadata: Metadata = {
 
 export default function ResearchPage() {
   const publicationCount = profile.writing.length;
+  const seminarsAndTalks = [...profile.talks, ...profile.seminars].toSorted(
+    (left, right) => {
+      const leftDate = "sortDate" in left ? left.sortDate : left.dateTime;
+      const rightDate = "sortDate" in right ? right.sortDate : right.dateTime;
+      return rightDate.localeCompare(leftDate);
+    },
+  );
 
   return (
     <>
@@ -73,7 +80,7 @@ export default function ResearchPage() {
               aria-labelledby="seminars-talks-heading"
             >
               <h2 id="seminars-talks-heading">seminars &amp; talks</h2>
-              {profile.talks.map((talk) => (
+              {seminarsAndTalks.map((talk) => "venue" in talk ? (
                 <article className="talk" key={talk.title}>
                   <p>
                     <time className="item-label" dateTime={talk.dateTime}>
@@ -93,16 +100,15 @@ export default function ResearchPage() {
                     ) : null}
                   </p>
                 </article>
-              ))}
-              {profile.seminars.map((seminar) => (
-                <article className="seminar" key={seminar.title}>
+              ) : (
+                <article className="seminar" key={talk.title}>
                   <p>
-                    <time className="item-label" dateTime={seminar.dateTime}>
-                      {seminar.date}
+                    <time className="item-label" dateTime={talk.dateTime}>
+                      {talk.date}
                     </time>{" "}
-                    <em>{seminar.title}</em>. {seminar.description}{" "}
+                    <em>{talk.title}</em>. {talk.description}{" "}
                     <span className="bracket-link">
-                      [<a href={seminar.href}>seminar page</a>]
+                      [<a href={talk.href}>seminar page</a>]
                     </span>
                   </p>
                 </article>

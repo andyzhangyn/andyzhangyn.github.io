@@ -1,6 +1,35 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const remainingSchedule = [
+  {
+    date: "2026-10-09",
+    label: "Friday, October 9",
+    noSeminar: "Geometric Representation Theory and 3d Mirror Symmetry workshop (October 5–9).",
+  },
+  { date: "2026-10-16", label: "Friday, October 16" },
+  {
+    date: "2026-10-23",
+    label: "Friday, October 23",
+    noSeminar: "Motivic Homotopy Theory: Connections and Applications workshop (October 19–23).",
+  },
+  { date: "2026-10-30", label: "Friday, October 30" },
+  {
+    date: "2026-11-06",
+    label: "Friday, November 6",
+    venueNote: "All seminars must take place in the Eisenbud Auditorium this week.",
+  },
+  { date: "2026-11-13", label: "Friday, November 13" },
+  { date: "2026-11-20", label: "Friday, November 20" },
+  {
+    date: "2026-11-27",
+    label: "Friday, November 27",
+    noSeminar: "SLMath is closed for Thanksgiving (November 26–27).",
+  },
+  { date: "2026-12-04", label: "Friday, December 4" },
+  { date: "2026-12-11", label: "Friday, December 11" },
+  { date: "2026-12-18", label: "Friday, December 18" },
+];
 
 export const metadata: Metadata = {
   title: "SLMath graduate student seminar",
@@ -85,12 +114,45 @@ export default function SLMathSeminarPage() {
                 <span>10–11 am</span>
               </div>
               <div>
-                <h2 id="oct-2-title">Topic TBA</h2>
+                <h2 id="oct-2-title">Relative Kazhdan Lusztig isomorphism for GL₂ₙ/Sp₂ₙ</h2>
                 <p className="slmath-speaker">
                   <a href="https://sites.google.com/view/guyshtotland/home">Guy Shtotland</a>
                 </p>
+                <p className="slmath-abstract">
+                  <strong>Abstract.</strong> The Kazhdan Lusztig isomorphism, which
+                  relates the affine Hecke algebra of a p-adic group to the
+                  equivariant K-theory of the Steinberg variety of its Langlands
+                  dual, played a key role in the proof of the Deligne Langlands
+                  conjecture on the classification of tamely ramified irreducible
+                  representations. For a spherical variety X, we can construct two
+                  modules over the affine Hecke algebra: the first by considering
+                  Iwahori invariant functions on X, and the second using relative
+                  Langlands duality and equivariant K-theory. It is natural to
+                  expect a relationship between these modules. I will discuss this
+                  relationship for X = GL₂ₙ/Sp₂ₙ and its application to the study
+                  of distinguished representations.
+                </p>
               </div>
             </article>
+            {remainingSchedule.map((event) => (
+              <article className="seminar-event" key={event.date} aria-labelledby={`seminar-${event.date}`}>
+                <div className="seminar-event-date">
+                  <time dateTime={event.date}>{event.label}</time>
+                  {!event.noSeminar && <span>10–11 am</span>}
+                </div>
+                <div>
+                  <h2 id={`seminar-${event.date}`}>{event.noSeminar ? "No seminar" : "Topic TBA"}</h2>
+                  {event.noSeminar ? (
+                    <p>{event.noSeminar}</p>
+                  ) : (
+                    <>
+                      <p className="slmath-speaker">Speaker TBA</p>
+                      {event.venueNote && <p className="academic-note">{event.venueNote}</p>}
+                    </>
+                  )}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </main>
