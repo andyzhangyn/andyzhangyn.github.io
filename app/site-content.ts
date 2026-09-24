@@ -60,10 +60,6 @@ export const profile = {
           label: "arXiv:2609",
           href: "https://arxiv.org/abs/2609.27089",
         },
-        {
-          label: "PDF",
-          href: "https://arxiv.org/pdf/2609.27089",
-        },
       ],
     },
     {
