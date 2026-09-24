@@ -86,6 +86,11 @@ export default function ResearchPage() {
                         <a href={talk.href}>event page</a>]
                       </span>
                     ) : null}
+                    {"notesHref" in talk ? (
+                      <span className="bracket-link">
+                        {" "}[<a href={talk.notesHref}>notes</a>]
+                      </span>
+                    ) : null}
                   </p>
                 </article>
               ))}

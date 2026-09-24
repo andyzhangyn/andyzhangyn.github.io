@@ -53,7 +53,15 @@ export default function HabiroWorkshopPage() {
                         <br />
                         {index % 2 === 0 ? "10–11 am" : "1–2 pm"}
                       </td>
-                      <th scope="row">Talk {index + 1}</th>
+                      <th scope="row">
+                        Talk {index + 1}
+                        {talk.notesHref ? (
+                          <>
+                            <br />
+                            <span className="bracket-link">[<a href={talk.notesHref}>notes</a>]</span>
+                          </>
+                        ) : null}
+                      </th>
                       <td>
                         <strong>{talk.title}</strong>
                         <p>{talk.description}</p>

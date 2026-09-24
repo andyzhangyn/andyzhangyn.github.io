@@ -3,6 +3,7 @@ export const programme = [
     title: "Overview",
     speaker: "Yuanning Zhang",
     speakerUrl: "/",
+    notesHref: "/notes/q-de-rham-habiro-talk-1.pdf",
     description: "This talk introduces the two starting points of the workshop: deforming de Rham cohomology and assembling quantum invariants at roots of unity. Simple examples of the q-derivative and of evaluation in the Habiro ring illustrate the roles of q = 1 and roots of unity. We then outline how the arithmetic and topological perspectives meet in the study of Habiro cohomology.",
     references: [
       { author: "Scholze", title: "Canonical q-deformations in arithmetic geometry", url: "https://arxiv.org/abs/1606.01796" },

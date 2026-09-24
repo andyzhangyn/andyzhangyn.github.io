@@ -771,4 +771,11 @@ export const readingList: readonly ReadingEntry[] = [
     "arXiv:2607.26323v1",
     [["arXiv", "https://arxiv.org/abs/2607.26323"]],
   ),
+  entry(
+    "2026",
+    "Y. Zhang",
+    "Harder–Narasimhan Filtration of Torsion F-Gauges",
+    "arXiv:2609.27089v1",
+    [["arXiv", "https://arxiv.org/abs/2609.27089"]],
+  ),
 ];

@@ -37,7 +37,8 @@ export const profile = {
     paragraphs: [
       "My current interests center on the relationship between the classical work of Ekedahl, Illusie–Raynaud, and Nygaard and modern developments in p-adic geometry. I am particularly interested in how de Rham-Witt cohomology, the slope spectral sequence, dominoes, and F-gauges can be understood through the stacky approach to prismatic cohomology.",
       "I am also interested in topics in positive-characteristic algebraic geometry, such as Ekedahl–Oort stratifications, p-primary Brauer groups, and K3 surfaces.",
-      "Before graduate school, I worked on algebraic combinatorics, especially Schubert calculus and k-Schur functions.",
+      "Recently, I have also become interested in q-de Rham cohomology, Habiro cohomology, and even filtrations, especially their connections with arithmetic geometry and homotopy theory.",
+      "Before graduate school, I worked on algebraic combinatorics, especially Schubert calculus, k-Schur functions, and q-analogues.",
     ],
     galleryIntroduction:
       "I also enjoy creating mathematical visualizations through vibe coding with the help of Codex and Claude Code; some of these projects can be found in the",
@@ -90,6 +91,14 @@ export const profile = {
 
   seminars: [
     {
+      date: "Fall 2026",
+      dateTime: "2026",
+      title: "SLMath graduate student seminar",
+      description:
+        "A graduate student seminar and mini workshops that I co-organize with Erika Beserra at SLMath in Fall 2026.",
+      href: "/seminar/slmath/",
+    },
+    {
       date: "Winter–Spring 2024",
       dateTime: "2024",
       title: "Prismatic F-gauges learning seminar",
@@ -101,8 +110,23 @@ export const profile = {
 
   talks: [
     {
-      date: "April 2026",
-      dateTime: "2026-04",
+      date: "October 9, 2026",
+      dateTime: "2026-10-09",
+      title: "TBD",
+      venue: "Student arithmetic geometry seminar, Berkeley",
+      href: "",
+    },
+    {
+      date: "September 23, 2026",
+      dateTime: "2026-09-23",
+      title: "q-de Rham cohomology and Habiro rings",
+      venue: "SLMath mini workshop",
+      href: "/seminar/slmath/habiro/",
+      notesHref: "/notes/q-de-rham-habiro-talk-1.pdf",
+    },
+    {
+      date: "April 25, 2026",
+      dateTime: "2026-04-25",
       title: "From F-crystals to Hodge–Witt cohomology",
       venue: "IU–Purdue Joint Workshop on Prismatic F-gauges",
       href: "https://www.math.purdue.edu/~mondalsh/workshop-f-gauges.html",

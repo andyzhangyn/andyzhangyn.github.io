@@ -25,7 +25,8 @@ const readingListByYear = Array.from(
         firstAuthorSurname(right.authors),
       );
 
-      return authorOrder || authorCollator.compare(left.title, right.title);
+      // Preserve reading-list order for works by the same first author.
+      return authorOrder;
     }),
   }),
 );
