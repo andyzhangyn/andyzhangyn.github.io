@@ -33,7 +33,6 @@ export default function HabiroWorkshopPage() {
             </div>
           </header>
           <div className="prose-page-body">
-            <p>Remaining speakers to be announced.</p>
             <p>We thank <a href="https://tessbouis.com/">Tess Bouis</a> for suggesting ideas for the individual talk topics.</p>
           </div>
           <section aria-labelledby="programme-heading">

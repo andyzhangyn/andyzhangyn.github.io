@@ -31,6 +31,7 @@ export const programme = [
   },
   {
     title: "Concrete computations and Habiro rings of number fields",
+    speaker: "canceled",
     description: "We explore the questions of Garoufalidis–Zagier and Garoufalidis–Scholze–Wheeler–Zagier through concrete q-series and expansions arising from quantum knot invariants and perturbative Chern–Simons theory. An example will illustrate how number fields enter the picture and why a naive extension of coefficients in the classical Habiro ring is insufficient. This leads to an introduction to Habiro rings of number fields and their gluing conditions, providing an arithmetic example to revisit in the final talk.",
     references: [
       { author: "Garoufalidis–Zagier", title: "Asymptotics of Nahm sums at roots of unity", url: "https://arxiv.org/abs/1812.07690" },
