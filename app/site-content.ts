@@ -55,8 +55,16 @@ export const profile = {
       year: "2026",
       authors: "Y. Zhang",
       title: "Harder-Narasimhan filtration of torsion F-gauges",
-      status: "In preparation.",
-      links: [],
+      links: [
+        {
+          label: "arXiv:2609",
+          href: "https://arxiv.org/abs/2609.27089",
+        },
+        {
+          label: "PDF",
+          href: "https://arxiv.org/pdf/2609.27089",
+        },
+      ],
     },
     {
       year: "2026",
