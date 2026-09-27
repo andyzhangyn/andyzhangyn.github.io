@@ -7,7 +7,7 @@ const remainingSchedule = [
     label: "Friday, October 9",
     noSeminar: "Geometric Representation Theory and 3d Mirror Symmetry workshop (October 5–9).",
   },
-  { date: "2026-10-16", label: "Friday, October 16" },
+  { date: "2026-10-16", label: "Friday, October 16", speaker: "Ansuman Chandra Bardalai" },
   {
     date: "2026-10-23",
     label: "Friday, October 23",
@@ -146,7 +146,7 @@ export default function SLMathSeminarPage() {
                     <p>{event.noSeminar}</p>
                   ) : (
                     <>
-                      <p className="slmath-speaker">Speaker TBA</p>
+                      <p className="slmath-speaker">{event.speaker ?? "Speaker TBA"}</p>
                       {event.venueNote && <p className="academic-note">{event.venueNote}</p>}
                     </>
                   )}
