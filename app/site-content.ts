@@ -100,6 +100,14 @@ export const profile = {
       href: "/seminar/slmath/",
     },
     {
+      date: "September 23–25, 2026",
+      dateTime: "2026-09-23",
+      title: "q-de Rham cohomology and Habiro rings",
+      description:
+        "A mini workshop on q-de Rham cohomology and Habiro rings that I organized at SLMath in September 2026, bringing together arithmetic geometry and quantum topology.",
+      href: "/q-de-rham-workshop/",
+    },
+    {
       date: "Winter–Spring 2024",
       dateTime: "2024",
       title: "Prismatic F-gauges learning seminar",
@@ -113,7 +121,7 @@ export const profile = {
     {
       date: "October 9, 2026",
       dateTime: "2026-10-09",
-      title: "TBD",
+      title: "Harder-Narasimhan filtration of torsion F-gauges",
       venue: "Student arithmetic geometry seminar, Berkeley",
       href: "",
     },
@@ -122,7 +130,7 @@ export const profile = {
       dateTime: "2026-09-23",
       title: "q-de Rham cohomology and Habiro rings",
       venue: "SLMath mini workshop",
-      href: "/seminar/slmath/habiro/",
+      href: "/q-de-rham-workshop/",
       notesHref: "/notes/q-de-rham-habiro-talk-1.pdf",
     },
     {

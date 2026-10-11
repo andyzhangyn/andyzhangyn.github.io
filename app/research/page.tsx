@@ -76,12 +76,28 @@ export default function ResearchPage() {
 
             <section
               className="page-section"
+              id="notes"
+              aria-labelledby="notes-heading"
+            >
+              <h2 id="notes-heading">notes</h2>
+              <article className="publication">
+                <p>
+                  <em>q-de Rham cohomology and Habiro rings</em>.{" "}
+                  <span className="bracket-link">
+                    [<a href="/notes/q-de-rham-habiro-talk-1.pdf">PDF</a>]
+                  </span>
+                </p>
+              </article>
+            </section>
+
+            <section
+              className="page-section"
               id="seminars-talks"
               aria-labelledby="seminars-talks-heading"
             >
               <h2 id="seminars-talks-heading">seminars &amp; talks</h2>
               {seminarsAndTalks.map((talk) => "venue" in talk ? (
-                <article className="talk" key={talk.title}>
+                <article className="talk" key={`talk-${talk.dateTime}-${talk.title}`}>
                   <p>
                     <time className="item-label" dateTime={talk.dateTime}>
                       {talk.date}
@@ -101,7 +117,7 @@ export default function ResearchPage() {
                   </p>
                 </article>
               ) : (
-                <article className="seminar" key={talk.title}>
+                <article className="seminar" key={`seminar-${talk.dateTime}-${talk.title}`}>
                   <p>
                     <time className="item-label" dateTime={talk.dateTime}>
                       {talk.date}

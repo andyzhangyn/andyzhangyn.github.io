@@ -7,7 +7,31 @@ const remainingSchedule = [
     label: "Friday, October 9",
     noSeminar: "Geometric Representation Theory and 3d Mirror Symmetry workshop (October 5–9).",
   },
-  { date: "2026-10-16", label: "Friday, October 16", speaker: "Ansuman Chandra Bardalai" },
+  {
+    date: "2026-10-16",
+    label: "Friday, October 16",
+    speaker: "Ansuman Chandra Bardalai",
+    title: "Functions on the almost-commuting stack",
+    abstract: (
+      <>
+        The almost-commuting stack is the moduli of triples (g,X,q), where g is a
+        group element, X is a Lie algebra element, and q is a scalar, such that
+        g<sup>−1</sup>Xg = qX. We compute the dg-algebra of G<sup>∨</sup>-invariant
+        functions on the almost-commuting stack as a graded dg-algebra over
+        k[q,1/q]. In other words, we calculate the pushforward of the structure
+        sheaf to G<sub>m</sub>/G<sub>m</sub>. Away from roots of unity, this
+        k[q,1/q]-dga agrees with O(T<sup>∨</sup>)<sup>W</sup>[q,1/q], while at
+        q = 1, there are derived corrections with nonzero grading degree. Unlike
+        the related work of Li-Nadler-Yun on the multiplicative commuting stack,
+        or of BenZvi-Chen-Helm-Nadler on coherent Springer theory, our approach
+        does not require any form of Bezrukavnikov&apos;s equivalence. Instead,
+        the primary technical input is a categorification of the Schur
+        orthogonality relations / Hirzebruch-Riemann-Roch theorem, which is
+        extracted from an adjointability criterion for doubly oplax-twisted
+        topological field theories.
+      </>
+    ),
+  },
   {
     date: "2026-10-23",
     label: "Friday, October 23",
@@ -105,7 +129,7 @@ export default function SLMathSeminarPage() {
               </div>
               <div>
                 <p className="seminar-event-kind">Mini Workshop</p>
-                <h2 id="workshop-title"><a href="/seminar/slmath/habiro/">q-de Rham cohomology and Habiro rings</a></h2>
+                <h2 id="workshop-title"><a href="/q-de-rham-workshop/">q-de Rham cohomology and Habiro rings</a></h2>
               </div>
             </article>
             <article className="seminar-event" aria-labelledby="oct-2-title">
@@ -141,12 +165,13 @@ export default function SLMathSeminarPage() {
                   {!event.noSeminar && <span>10–11 am</span>}
                 </div>
                 <div>
-                  <h2 id={`seminar-${event.date}`}>{event.noSeminar ? "No seminar" : "Topic TBA"}</h2>
+                  <h2 id={`seminar-${event.date}`}>{event.noSeminar ? "No seminar" : (event.title ?? "Topic TBA")}</h2>
                   {event.noSeminar ? (
                     <p>{event.noSeminar}</p>
                   ) : (
                     <>
                       <p className="slmath-speaker">{event.speaker ?? "Speaker TBA"}</p>
+                      {event.abstract && <p className="slmath-abstract"><strong>Abstract.</strong> {event.abstract}</p>}
                       {event.venueNote && <p className="academic-note">{event.venueNote}</p>}
                     </>
                   )}

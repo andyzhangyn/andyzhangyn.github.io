@@ -7,7 +7,7 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `${siteUrl}/seminar/slmath/habiro/`,
+      url: `${siteUrl}/q-de-rham-workshop/`,
       changeFrequency: "weekly",
       priority: 0.8,
     },

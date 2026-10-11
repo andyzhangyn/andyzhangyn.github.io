@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { SiteFooter, SiteHeader } from "../site-shell";
 import { readingList } from "./reading-data";
+import { ReadingBrowser } from "./reading-browser";
 
 const authorCollator = new Intl.Collator("en", { sensitivity: "base" });
 
@@ -33,7 +34,7 @@ const readingListByYear = Array.from(
 
 export const metadata: Metadata = {
   title: "de Rham–Witt reading list",
-  description: "A reading list on de Rham-Witt cohomology, F-gauges, and related topics.",
+  description: "A reading list on de Rham–Witt cohomology, F-gauges, and related topics in p-adic geometry.",
   alternates: {
     canonical: "/de-rham-witt/",
   },
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     type: "article",
     url: "/de-rham-witt/",
     title: "de Rham–Witt reading list",
-    description: "A reading list on de Rham-Witt cohomology, F-gauges, and related topics.",
+    description: "A reading list on de Rham–Witt cohomology, F-gauges, and related topics in p-adic geometry.",
   },
 };
 
@@ -58,31 +59,13 @@ export default function DeRhamWittReadingPage() {
         <div className="wrapper content-page-wrapper">
           <header className="content-page-header">
             <h1>de Rham–Witt reading list</h1>
-            <p>A reading list on de Rham-Witt cohomology, F-gauges, and related topics.</p>
+            <p>A reading list on de Rham–Witt cohomology, F-gauges, and related topics in p-adic geometry.</p>
           </header>
 
-          <div className="bibliography-groups">
-            {readingListByYear.map((group) => (
-              <section className="bibliography-year" key={group.year}>
-                <h2>{group.year}</h2>
-                <ul className="bibliography-list">
-                  {group.entries.map((entry) => (
-                    <li key={entry.title}>
-                      <p>
-                        {entry.authors}, <em>{entry.title}</em>, {entry.publication}.
-                        {entry.links.map((link) => (
-                          <span className="bracket-link" key={link.href}>
-                            {" "}[
-                            <a href={link.href}>{link.label}</a>]
-                          </span>
-                        ))}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            ))}
-          </div>
+          <ReadingBrowser groups={readingListByYear} />
+          <p className="bibliography-last-update">
+            Last update: <time dateTime="2026-10-11">October 11, 2026</time>
+          </p>
         </div>
       </main>
 
