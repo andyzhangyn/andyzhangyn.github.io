@@ -63,7 +63,9 @@ export default function ResearchPage() {
                       [{publicationCount - index}]
                     </span>{" "}
                     {item.authors}, <em>{item.title}</em>.{" "}
-                    {"status" in item ? item.status : null}{" "}
+                    {"status" in item && typeof item.status === "string"
+                      ? item.status
+                      : null}{" "}
                     {item.links.map((link) => (
                       <span className="bracket-link" key={link.label}>
                         [<a href={link.href}>{link.label}</a>]
