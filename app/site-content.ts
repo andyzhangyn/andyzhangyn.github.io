@@ -49,8 +49,12 @@ export const profile = {
       year: "2026",
       authors: "Y. Zhang",
       title: "The stacky approach to de Rham-Witt cohomology",
-      status: "In preparation.",
-      links: [],
+      links: [
+        {
+          label: "arXiv:2610",
+          href: "https://arxiv.org/abs/2610.28149",
+        },
+      ],
     },
     {
       year: "2026",
