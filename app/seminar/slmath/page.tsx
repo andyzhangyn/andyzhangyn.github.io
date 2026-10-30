@@ -41,6 +41,19 @@ const remainingSchedule = [
   {
     date: "2026-11-06",
     label: "Friday, November 6",
+    speaker: "Tudor-Ioan Caba",
+    title: "Rozansky-Witten theory as a once-extended 3D TFT",
+    abstract: (
+      <>
+        Given a symplectic variety X over a field of characteristic zero, I will
+        explain how to construct a once-extended 3D TFT whose category of line
+        operators is QCoh(X), 2-periodified, braided using a Drinfeld
+        associator. This provides a mathematical formalization of the 3-2-1
+        part of the Rozansky-Witten theory of X. I will explain the necessity
+        of 2-periodification, the role played by the six functor formalism for
+        QCoh and the input provided by the Kontsevich integral.
+      </>
+    ),
     venueNote: "All seminars must take place in the Eisenbud Auditorium this week.",
   },
   { date: "2026-11-13", label: "Friday, November 13" },
