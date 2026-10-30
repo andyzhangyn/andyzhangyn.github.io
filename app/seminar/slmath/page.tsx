@@ -37,7 +37,7 @@ const remainingSchedule = [
     label: "Friday, October 23",
     noSeminar: "Motivic Homotopy Theory: Connections and Applications workshop (October 19–23).",
   },
-  { date: "2026-10-30", label: "Friday, October 30" },
+  { date: "2026-10-30", label: "Friday, October 30", noSeminar: true },
   {
     date: "2026-11-06",
     label: "Friday, November 6",
@@ -180,7 +180,7 @@ export default function SLMathSeminarPage() {
                 <div>
                   <h2 id={`seminar-${event.date}`}>{event.noSeminar ? "No seminar" : (event.title ?? "Topic TBA")}</h2>
                   {event.noSeminar ? (
-                    <p>{event.noSeminar}</p>
+                    typeof event.noSeminar === "string" && <p>{event.noSeminar}</p>
                   ) : (
                     <>
                       <p className="slmath-speaker">{event.speaker ?? "Speaker TBA"}</p>
