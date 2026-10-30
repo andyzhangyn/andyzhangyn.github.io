@@ -57,7 +57,11 @@ const remainingSchedule = [
     venueNote: "All seminars must take place in the Eisenbud Auditorium this week.",
   },
   { date: "2026-11-13", label: "Friday, November 13" },
-  { date: "2026-11-20", label: "Friday, November 20" },
+  {
+    date: "2026-11-20",
+    label: "Friday, November 20",
+    speaker: <a href="https://yo264.user.srcf.net/">Yuji Okitani</a>,
+  },
   {
     date: "2026-11-27",
     label: "Friday, November 27",
