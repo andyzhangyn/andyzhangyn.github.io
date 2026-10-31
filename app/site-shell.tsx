@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { NavLinks } from "./nav-links";
 import { profile } from "./site-content";
 
 export function SiteHeader() {
@@ -21,11 +22,7 @@ export function SiteHeader() {
             <span className="visually-hidden">Toggle navigation</span>
           </label>
           <div className="trigger">
-            {profile.navigation.map((item) => (
-              <a className="page-link" key={item.href} href={item.href}>
-                {item.label}
-              </a>
-            ))}
+            <NavLinks />
           </div>
         </nav>
       </div>

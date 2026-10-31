@@ -40,7 +40,10 @@ export default function Home() {
                   <a href={item.href}>{item.program}</a>.
                 </p>
               ))}
-              <p>I am on the postdoctoral job market this year (2026).</p>
+              <p>
+                I am on the postdoctoral job market this year (2026). My CV is{" "}
+                <a href="/cv.pdf">here</a> (last updated October 2026).
+              </p>
             </div>
           </section>
 

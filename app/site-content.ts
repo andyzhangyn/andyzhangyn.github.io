@@ -27,10 +27,11 @@ export const profile = {
     "My interests lie in p-adic geometry, especially the stacky approach to F-gauges and de Rham-Witt cohomology.",
 
   navigation: [
-    { label: "research", href: "/research/" },
-    { label: "reading", href: "/de-rham-witt/" },
-    { label: "seminar", href: "/seminar/" },
-    { label: "gallery", href: "/visualizations/" },
+    { label: "about", href: "/", match: [] },
+    { label: "research", href: "/research/", match: ["/writing/", "/seminars-talks/"] },
+    { label: "reading", href: "/de-rham-witt/", match: [] },
+    { label: "seminar", href: "/seminar/", match: ["/q-de-rham-workshop/"] },
+    { label: "gallery", href: "/visualizations/", match: [] },
   ],
 
   research: {
@@ -123,6 +124,13 @@ export const profile = {
 
   talks: [
     {
+      date: "October 29, 2026",
+      dateTime: "2026-10-29",
+      title: "The stacky approach to de Rham-Witt cohomology",
+      venue: "Simons Collaboration on Perfection Work-in-Progress Seminar",
+      href: "",
+    },
+    {
       date: "October 9, 2026",
       dateTime: "2026-10-09",
       title: "Harder-Narasimhan filtration of torsion F-gauges",
@@ -150,6 +158,100 @@ export const profile = {
       title: "Nygaard filtered prismatization in mixed characteristics",
       venue: "IU–Purdue Arithmetic Geometry Learning Seminar",
       href: "https://sites.google.com/view/purdue-iu-seminar-2026/home",
+    },
+  ],
+
+  researchVisits: [
+    {
+      date: "October 19–23, 2026",
+      dateTime: "2026-10-19",
+      place: "ICERM, Brown University",
+      role: "Research cluster participant",
+      title: "K3 Surfaces over Finite Fields",
+      href: "https://icerm.brown.edu/program/semester_research_cluster/sp-f26-rc1",
+    },
+    {
+      date: "August 17–December 18, 2026",
+      dateTime: "2026-08-17",
+      place: "SLMath",
+      role: "Stephen Della Pietra Program Associate Fellow",
+      title: "Motivic Homotopy Theory: Connections and Applications",
+      href: "https://www.slmath.org/programs/384",
+    },
+    {
+      date: "March 19–21, 2025",
+      dateTime: "2025-03-19",
+      place: "University of California, Berkeley",
+      role: "NSF FRG meeting",
+      title: "Higher Categorical Structures in Algebraic Geometry",
+      href: "https://antieau.github.io/grants/202209-frg.html",
+    },
+  ],
+
+  conferences: [
+    {
+      date: "March 2024, 2025, 2026, 2027",
+      dateTime: "2027-03",
+      title: "Simons Collaboration on Perfection in Algebra, Geometry, and Topology, Annual Meetings",
+      venue: "Simons Foundation, New York City",
+      href: "",
+    },
+    {
+      date: "July 2025",
+      dateTime: "2025-07",
+      title: "Bootcamp for the 2025 Summer Research Institute in Algebraic Geometry",
+      venue: "Colorado State University",
+      note: "Working-group mentor: Alexander Petrov.",
+      href: "",
+    },
+    {
+      date: "March 2025",
+      dateTime: "2025-03",
+      title: "Arizona Winter School on Representation Theory of p-adic Groups",
+      venue: "University of Arizona",
+      href: "https://swc-math.github.io/aws/2025/index.html",
+    },
+    {
+      date: "December 2024",
+      dateTime: "2024-12",
+      title: "Hot Topics: Life after the Telescope Conjecture",
+      venue: "SLMath",
+      href: "",
+    },
+    {
+      date: "November 2023 and March 2024",
+      dateTime: "2023-11",
+      title: "Special Year on p-adic Arithmetic Geometry, Workshops",
+      venue: "IAS",
+      href: "https://www.ias.edu/math/events/sp-p-adic-arithmetic-geometry",
+    },
+    {
+      date: "March 2024",
+      dateTime: "2024-03",
+      title: "Arizona Winter School on Abelian Varieties",
+      venue: "University of Arizona",
+      href: "",
+    },
+    {
+      date: "July 2023",
+      dateTime: "2023-07",
+      title: "IHES Summer School: Recent Advances in Algebraic K-theory",
+      venue: "IHES",
+      href: "https://indico.math.cnrs.fr/event/8837/",
+    },
+    {
+      date: "June–July 2023",
+      dateTime: "2023-06",
+      title: "MSRI Summer Graduate School: Introduction to Derived Algebraic Geometry",
+      venue: "UC Berkeley",
+      href: "",
+    },
+    {
+      date: "January–February 2023",
+      dateTime: "2023-01",
+      title: "Topological Hochschild Homology and Zeta Values, Masterclass",
+      venue: "University of Copenhagen",
+      href: "https://www.math.ku.dk/english/calendar/events/zeta-values/",
     },
   ],
 

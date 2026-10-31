@@ -201,8 +201,19 @@ label:focus-visible {
 }
 
 .site-nav .page-link {
-  color: var(--text-color);
+  color: var(--grey-color);
   line-height: 1.5;
+}
+
+.site-nav .page-link:hover {
+  color: var(--text-color);
+}
+
+.site-nav .page-link.is-current {
+  color: var(--text-color);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
 }
 
 .site-nav .page-link:not(:last-child) {

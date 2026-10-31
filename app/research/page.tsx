@@ -132,6 +132,51 @@ export default function ResearchPage() {
                 </article>
               ))}
             </section>
+
+            <section
+              className="page-section"
+              id="research-visits"
+              aria-labelledby="research-visits-heading"
+            >
+              <h2 id="research-visits-heading">research visits</h2>
+              {profile.researchVisits.map((visit) => (
+                <article className="talk" key={`visit-${visit.dateTime}`}>
+                  <p>
+                    <time className="item-label" dateTime={visit.dateTime}>
+                      {visit.date}
+                    </time>{" "}
+                    {visit.place}, {visit.role}, <em>{visit.title}</em>.
+                    <span className="bracket-link">
+                      {" "}[<a href={visit.href}>program page</a>]
+                    </span>
+                  </p>
+                </article>
+              ))}
+            </section>
+
+            <section
+              className="page-section"
+              id="conferences"
+              aria-labelledby="conferences-heading"
+            >
+              <h2 id="conferences-heading">conferences &amp; workshops</h2>
+              {profile.conferences.map((conference) => (
+                <article className="talk" key={`conference-${conference.dateTime}-${conference.title}`}>
+                  <p>
+                    <time className="item-label" dateTime={conference.dateTime}>
+                      {conference.date}
+                    </time>{" "}
+                    <em>{conference.title}</em>, {conference.venue}.
+                    {"note" in conference ? ` ${conference.note}` : null}
+                    {conference.href ? (
+                      <span className="bracket-link">
+                        {" "}[<a href={conference.href}>event page</a>]
+                      </span>
+                    ) : null}
+                  </p>
+                </article>
+              ))}
+            </section>
           </div>
         </div>
       </main>
