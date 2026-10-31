@@ -68,7 +68,11 @@ const remainingSchedule = [
     noSeminar: "SLMath is closed for Thanksgiving (November 26–27).",
   },
   { date: "2026-12-04", label: "Friday, December 4" },
-  { date: "2026-12-11", label: "Friday, December 11" },
+  {
+    date: "2026-12-11",
+    label: "Friday, December 11",
+    speaker: <a href="https://jacoberl.github.io/">Jacob Erlikhman</a>,
+  },
   { date: "2026-12-18", label: "Friday, December 18" },
 ];
 
