@@ -124,6 +124,20 @@ export const profile = {
 
   talks: [
     {
+      date: "November 23, 2026",
+      dateTime: "2026-11-23",
+      title: "The stacky approach to de Rham–Witt cohomology",
+      venue: "SLMath Motivic Homotopy Theory research seminar",
+      href: "",
+    },
+    {
+      date: "November 9, 2026",
+      dateTime: "2026-11-09",
+      title: "Harder–Narasimhan filtrations of torsion F-gauges",
+      venue: "SLMath graduate student seminar",
+      href: "/seminar/slmath/#seminar-2026-11-09",
+    },
+    {
       date: "October 29, 2026",
       dateTime: "2026-10-29",
       title: "The stacky approach to de Rham-Witt cohomology",

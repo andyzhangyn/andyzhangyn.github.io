@@ -56,7 +56,26 @@ const remainingSchedule = [
     ),
     venueNote: "All seminars must take place in the Eisenbud Auditorium this week.",
   },
-  { date: "2026-11-13", label: "Friday, November 13" },
+  {
+    date: "2026-11-09",
+    label: "Monday, November 9",
+    dateNote: "Rescheduled from Friday, November 13",
+    speaker: <Link href="/">Yuanning Zhang</Link>,
+    title: "Harder–Narasimhan filtrations of torsion F-gauges",
+    abstract: (
+      <>
+        After inverting p, F-gauges over a perfect field are governed by
+        Dieudonné–Manin theory. What structure remains on the torsion side? I
+        will begin with the historical background, focusing on Ekedahl&apos;s
+        work on F-gauges and his half-integer-indexed filtration on diagonal
+        dominoes. I will then explain how refining this filtration leads to a
+        Harder–Narasimhan theory for torsion coherent F-gauges and a
+        classification of stable objects and semistable categories at each
+        rational slope.
+      </>
+    ),
+    venueNote: "Eisenbud Auditorium, SLMath.",
+  },
   {
     date: "2026-11-20",
     label: "Friday, November 20",
@@ -99,7 +118,7 @@ export default function SLMathSeminarPage() {
           </header>
 
           <p>Welcome! This is the webpage for the SLMath graduate student seminar and mini workshops in Fall 2026.</p>
-          <p><strong>Fridays, 10–11 am</strong> · Eisenbud Auditorium, SLMath.</p>
+          <p><strong>Usually Fridays, 10–11 am</strong> · Eisenbud Auditorium, SLMath.</p>
           <h2 className="academic-section-title">Schedule</h2>
           <div className="seminar-schedule">
             <article className="seminar-event" aria-labelledby="sept-11-title">
@@ -184,6 +203,7 @@ export default function SLMathSeminarPage() {
                 <div className="seminar-event-date">
                   <time dateTime={event.date}>{event.label}</time>
                   {!event.noSeminar && <span>10–11 am</span>}
+                  {event.dateNote && <span className="academic-note"><em>{event.dateNote}</em></span>}
                 </div>
                 <div>
                   <h2 id={`seminar-${event.date}`}>{event.noSeminar ? "No seminar" : (event.title ?? "Topic TBA")}</h2>

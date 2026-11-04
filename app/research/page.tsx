@@ -99,7 +99,7 @@ export default function ResearchPage() {
             >
               <h2 id="seminars-talks-heading">seminars &amp; talks</h2>
               {seminarsAndTalks.map((talk) => "venue" in talk ? (
-                <article className="talk" key={`talk-${talk.dateTime}-${talk.title}`}>
+                <article className="talk" id={`talk-${talk.dateTime}`} key={`talk-${talk.dateTime}-${talk.title}`}>
                   <p>
                     <time className="item-label" dateTime={talk.dateTime}>
                       {talk.date}
