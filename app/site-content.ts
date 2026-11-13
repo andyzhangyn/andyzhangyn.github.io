@@ -133,9 +133,10 @@ export const profile = {
     {
       date: "November 9, 2026",
       dateTime: "2026-11-09",
-      title: "Harder–Narasimhan filtrations of torsion F-gauges",
+      title: "Harder–Narasimhan filtration of torsion F-gauges",
       venue: "SLMath graduate student seminar",
       href: "/seminar/slmath/#seminar-2026-11-09",
+      videoHref: "https://www.slmath.org/video-details/29565/40250",
     },
     {
       date: "October 29, 2026",

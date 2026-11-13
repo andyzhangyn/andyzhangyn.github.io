@@ -61,7 +61,7 @@ const remainingSchedule = [
     label: "Monday, November 9",
     dateNote: "Rescheduled from Friday, November 13",
     speaker: <Link href="/">Yuanning Zhang</Link>,
-    title: "Harder–Narasimhan filtrations of torsion F-gauges",
+    title: "Harder–Narasimhan filtration of torsion F-gauges",
     abstract: (
       <>
         After inverting p, F-gauges over a perfect field are governed by

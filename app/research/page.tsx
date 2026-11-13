@@ -116,6 +116,11 @@ export default function ResearchPage() {
                         {" "}[<a href={talk.notesHref}>notes</a>]
                       </span>
                     ) : null}
+                    {"videoHref" in talk ? (
+                      <span className="bracket-link">
+                        {" "}[<a href={talk.videoHref}>video</a>]
+                      </span>
+                    ) : null}
                   </p>
                 </article>
               ) : (
