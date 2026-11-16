@@ -80,6 +80,17 @@ const remainingSchedule = [
     date: "2026-11-20",
     label: "Friday, November 20",
     speaker: <a href="https://yo264.user.srcf.net/">Yuji Okitani</a>,
+    title: "Microlocal perverse schobers",
+    abstract: (
+      <>
+        Perverse schobers are a categorification of perverse sheaves introduced
+        in 2014 by Kapranov–Schechtman. In this talk, I will discuss recent
+        progress on understanding microlocal perverse schobers, through analogy
+        with the microlocal sheaves of Kashiwara–Schapira. Such objects are
+        expected to model boundary conditions on the A-side of 3d mirror
+        symmetry, in a proposal put forward by Gammage–Hilburn–Mazel-Gee.
+      </>
+    ),
   },
   {
     date: "2026-11-27",
