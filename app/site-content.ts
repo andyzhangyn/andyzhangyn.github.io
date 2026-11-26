@@ -24,7 +24,7 @@ export const profile = {
   },
 
   introduction:
-    "My interests lie in p-adic geometry, especially the stacky approach to F-gauges and de Rham-Witt cohomology.",
+    "My interests lie in p-adic geometry, especially the stacky approach to F-gauges and de Rham–Witt cohomology.",
 
   navigation: [
     { label: "about", href: "/", match: [] },
@@ -36,7 +36,7 @@ export const profile = {
 
   research: {
     paragraphs: [
-      "My current interests center on the relationship between the classical work of Ekedahl, Illusie–Raynaud, and Nygaard and modern developments in p-adic geometry. I am particularly interested in how de Rham-Witt cohomology, the slope spectral sequence, dominoes, and F-gauges can be understood through the stacky approach to prismatic cohomology.",
+      "My current interests center on the relationship between the classical work of Ekedahl, Illusie–Raynaud, and Nygaard and modern developments in p-adic geometry. I am particularly interested in how de Rham–Witt cohomology, the slope spectral sequence, dominoes, and F-gauges can be understood through the stacky approach to prismatic cohomology.",
       "I am also interested in topics in positive-characteristic algebraic geometry, such as Ekedahl–Oort stratifications, p-primary Brauer groups, and K3 surfaces.",
       "Recently, I have also become interested in q-de Rham cohomology, Habiro cohomology, and even filtrations, especially their connections with arithmetic geometry and homotopy theory.",
       "Before graduate school, I worked on algebraic combinatorics, especially Schubert calculus, k-Schur functions, and q-analogues.",
@@ -49,7 +49,7 @@ export const profile = {
     {
       year: "2026",
       authors: "Y. Zhang",
-      title: "The stacky approach to de Rham-Witt cohomology",
+      title: "The stacky approach to de Rham–Witt cohomology",
       links: [
         {
           label: "arXiv:2610",
@@ -60,7 +60,7 @@ export const profile = {
     {
       year: "2026",
       authors: "Y. Zhang",
-      title: "Harder-Narasimhan filtration of torsion F-gauges",
+      title: "Harder–Narasimhan filtration of torsion F-gauges",
       links: [
         {
           label: "arXiv:2609",
@@ -71,7 +71,7 @@ export const profile = {
     {
       year: "2026",
       authors: "Y. Zhang",
-      title: "Higher dimensional dominoes in de Rham-Witt cohomology",
+      title: "Higher dimensional dominoes in de Rham–Witt cohomology",
       links: [
         {
           label: "arXiv:2607",
@@ -129,6 +129,7 @@ export const profile = {
       title: "The stacky approach to de Rham–Witt cohomology",
       venue: "SLMath Motivic Homotopy Theory research seminar",
       href: "",
+      videoHref: "https://www.slmath.org/video-details/29492/40143",
     },
     {
       date: "November 9, 2026",
@@ -141,14 +142,14 @@ export const profile = {
     {
       date: "October 29, 2026",
       dateTime: "2026-10-29",
-      title: "The stacky approach to de Rham-Witt cohomology",
+      title: "The stacky approach to de Rham–Witt cohomology",
       venue: "Simons Collaboration on Perfection Work-in-Progress Seminar",
       href: "",
     },
     {
       date: "October 9, 2026",
       dateTime: "2026-10-09",
-      title: "Harder-Narasimhan filtration of torsion F-gauges",
+      title: "Harder–Narasimhan filtration of torsion F-gauges",
       venue: "Student arithmetic geometry seminar, Berkeley",
       href: "",
     },
